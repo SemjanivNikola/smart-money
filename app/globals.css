@@ -85,7 +85,8 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  /* background: rgb(var(--background-rgb)); */
+  background: linear-gradient(54deg, #9118eb 0%, #e5d4d2 8%, #e2fabd 20%, #ffca4e 22%, rgba(254, 36, 66, .65) 26%, #ff6bc0 32%, #ff8504 37%, #e2fabd 41%, #ff6bc0 82%, #9118eb 100%);
 }
 
 a {
@@ -97,4 +98,117 @@ a {
   html {
     color-scheme: light;
   }
+}
+
+/* ------------------------------ */
+main.main-layout {
+  width: 100%;
+  height: 100svh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  backdrop-filter: blur(10.12rem);
+  color: #141414;
+}
+.nav-wrapper {
+  position: relative;
+  width: 20%;
+  height: inherit;
+  max-width: 350px;
+  background-color: rgba(255, 255, 255, .4);
+  border-right: 4px solid #ffffff80;
+}
+.nav-section-title {
+  display: block;
+  text-transform: uppercase;
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: .5rem;
+  color: rgba(0, 0, 0, .5);
+}
+
+section.content {
+  width: 80%;
+  height: inherit;
+  /* background: red; */
+}
+
+a.nav-link, button.nav-btn {
+  /* flex-row justify-start align-center gap-05 p-1 */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .5rem;
+  padding: 1rem;
+  transition: all 150ms ease-out;
+}
+a.nav-link:hover, button.nav-btn:hover {
+  background-color: rgba(128, 0, 128, .8);
+  color: #fff;
+}
+a.nav-link:hover svg, a.nav-link.active svg, button.nav-btn:hover svg {
+  fill: #fff;
+}
+a.nav-link.active {
+  background-color: purple;
+  color: #fff;
+  pointer-events: none;
+}
+
+button.nav-btn {
+  position: absolute;
+  left: 1rem;
+  bottom: 2rem;
+  width: calc(100% - 2rem);
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+/* ------------------------------ */
+.spacer-md {
+  height: 2rem;
+}
+
+/* ------------------------------ */
+.p-1 {
+  padding: 1rem;
+}
+.px-1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* ------------------------------ */
+.flex, .flex-row {
+  display: flex;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.align-start {
+  align-items: flex-start;
+}
+.align-center {
+  align-items: center;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-center {
+  justify-content: center;
+}
+.gap-05 {
+  gap: .5rem
 }
