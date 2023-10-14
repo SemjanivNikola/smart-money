@@ -170,6 +170,16 @@ button.nav-btn {
   cursor: pointer;
 }
 
+.top-bar-nav {
+  margin: .5rem;
+  padding: 1rem;
+  border-radius: .5rem;
+  -moz-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+  box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+  background-color: #fff;
+}
+
 /* ------------------------------ */
 .spacer-md {
   height: 2rem;
