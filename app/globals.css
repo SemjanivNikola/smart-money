@@ -184,6 +184,11 @@ button.nav-btn {
 .spacer-md {
   height: 2rem;
 }
+.divider-horizontal {
+  width: 2px;
+  height: 25px;
+  background-color: rgba(0, 0, 0, .45);
+}
 
 /* ------------------------------ */
 .p-1 {
@@ -197,6 +202,9 @@ button.nav-btn {
 .py-2 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+.pb-1-5 {
+  padding-bottom: 1.5rem;
 }
 
 /* ------------------------------ */
@@ -219,6 +227,15 @@ button.nav-btn {
 .justify-center {
   justify-content: center;
 }
+.justify-between {
+  justify-content: space-between;
+}
+.justify-even {
+  justify-content: space-between;
+}
 .gap-05 {
   gap: .5rem
+}
+.gap-1-5 {
+  gap: 1.5rem;
 }
