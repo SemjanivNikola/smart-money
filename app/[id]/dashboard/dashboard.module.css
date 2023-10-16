@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: .5rem;
-    padding: .5rem;
+    padding: 1rem;
 }
 
 #analytics {
