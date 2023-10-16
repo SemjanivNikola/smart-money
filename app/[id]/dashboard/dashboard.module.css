@@ -1,0 +1,45 @@
+.cardGrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: .5rem;
+    padding: .5rem;
+}
+
+.card {
+    width: 350px;
+    padding: 1rem;
+    border-radius: .5rem;
+    -webkit-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+    box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+    background-color: #fff;
+    user-select: none;
+    pointer-events: none;
+}
+
+.card h4 {
+    font-weight: 500;
+    margin-bottom: .5rem;
+}
+
+.balance {
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+.balancePill {
+    background-color: rgba(103, 255, 133, 0.35);
+    border-radius: .75rem;
+    padding: .25rem .5rem;
+    font-size: .75rem;
+    color: rgb(0, 155, 31);
+}
+
+.balanceDescItem {
+    position: relative;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: .5rem 0;
+}
