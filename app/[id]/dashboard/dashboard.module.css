@@ -1,28 +1,37 @@
 .cardGrid {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: .5rem;
     padding: .5rem;
 }
 
-.card {
-    width: 350px;
-    padding: 1rem;
+#analytics {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.card, .cardList {
     border-radius: .5rem;
     -webkit-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
     -moz-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
     box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
     background-color: #fff;
     user-select: none;
-    pointer-events: none;
+}
+.card {
+    padding: 1rem;
+}
+.cardList {
+    padding: 1rem 0;
 }
 
-.card h4 {
+.card h4, .cardList h4 {
     font-weight: 500;
-    margin-bottom: .5rem;
+    margin-bottom: 1.5rem;
+}
+.cardList h4 {
+    padding: 0 1rem;
 }
 
 .balance {
@@ -39,7 +48,32 @@
 
 .balanceDescItem {
     position: relative;
-    flex-grow: 1;
-    flex-shrink: 0;
     padding: .5rem 0;
+}
+
+.transactionItem {
+    display: flex;
+    align-items: center;
+    padding: .5rem 1rem;
+    transition: background-color 150ms ease-in-out;
+    cursor: pointer;
+}
+.transactionItem:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.avatar {
+    height: 45px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #000;
+    font-weight: 700;
+    font-size: 1.25rem;
+    border-radius: 50%;
+    margin-right: 2rem;
+}
+.dateTime {
+    font-size: .75rem;
 }
