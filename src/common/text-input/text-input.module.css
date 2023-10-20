@@ -1,4 +1,4 @@
-input {
+.input {
     width: 100%;
     height: 32px;
     outline: none;
@@ -11,21 +11,21 @@ input {
     padding-top: var(--s);
 }
 
-input:focus + .input_label,
-input:not([value=""]) + .input_label,
-textarea:focus + .input_label,
-textarea:not([value=""]) + .input_label {
+.input:focus + .inputLabel,
+.input:not([value=""]) + .inputLabel,
+textarea:focus + .inputLabel,
+textarea:not([value=""]) + .inputLabel {
     top: 0;
     font-size: var(--font-s);
 }
 
-.input_label {
+.inputLabel {
     top: 50%;
     left: 0;
     transition: all 150ms ease-out;
 }
 
-.input_error {
+.inputError {
     height: var(--m);
     padding-top: var(--s);
     font-size: var(--font-xs);
@@ -33,7 +33,7 @@ textarea:not([value=""]) + .input_label {
     color: rgb(239 68 68);
 }
 
-textarea {
+.textarea {
     width: 100%;
     outline: none;
     border: none;
