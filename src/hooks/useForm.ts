@@ -10,9 +10,9 @@ import {
 } from "@/src/types/FormProps";
 import { InputHTMLAttributes, useState } from "react";
 
-export function useForm<
-    T extends Record<string, InputHTMLAttributes<HTMLInputElement>["value"]>
->(initialValues: T): FormProps<T> {
+export function useForm<T extends Record<string, InputHTMLAttributes<HTMLInputElement>["value"]>>(
+    initialValues: T
+): FormProps<T> {
     const [data, setData] = useState<DataObject<T>>(initialValues);
     const errors: ErrorsObject<T> = {} as ErrorsObject<T>;
 
