@@ -1,6 +1,7 @@
 import { InputHTMLAttributes, ReactNode } from "react";
 
 interface TextInputProps {
+    id: string;
     type: InputHTMLAttributes<HTMLInputElement>["type"];
     name: string;
     autoComplete?: InputHTMLAttributes<HTMLInputElement>["autoComplete"];
