@@ -1,0 +1,38 @@
+.cardWrapper {
+    min-width: 390px;
+    padding: var(--s) var(--m);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    -webkit-box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow);
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.cardBalance {
+    font-size: var(--font-xl);
+    padding: var(--xl) 0;
+}
+
+.cardSubText {
+    font-size: var(--font-s);
+    color: var(--gray); 
+}
+
+.newCardBtn {
+    width: 210px;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray-tone);
+    -webkit-box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+}
+
+.circle {
+
+}

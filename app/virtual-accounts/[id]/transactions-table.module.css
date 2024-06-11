@@ -1,0 +1,19 @@
+.table {
+    width: 100%;
+    table-layout: fixed;
+    min-width: 390px;
+    padding: 0 var(--s);
+    border-collapse: collapse;
+}
+
+.tttr {
+    background-color: var(--black);
+    color: var(--white);
+    font-weight: 600;
+    padding: var(--s) var(--m);   
+}
+
+.ttth {
+    height: 64px;
+    padding: var(--s);   
+}

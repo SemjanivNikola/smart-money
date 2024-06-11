@@ -1,13 +1,15 @@
 export type IconName =
-    | "dashboard"
-    | "cog-outlined"
+    | "account"
     | "chart"
-    | "credit-card"
-    | "open-drawer"
-    | "close-drawer"
     | "chevron-left"
     | "chevron-right"
-    | "account"
+    | "close-drawer"
+    | "cloud-upload"
+    | "cog-outlined"
     | "create-account"
+    | "credit-card"
+    | "dashboard"
+    | "open-drawer"
+    | "plus"
     | "signout"
-    | "plus";
+    | "plus-circle";
