@@ -11,15 +11,15 @@ const SideBarNav = () => {
                 <NavLink
                     icon="dashboard"
                     title="Dashboard"
-                    href="/dashboard"
+                    href="/"
                 />
-                <NavLink icon="credit-card" title="Virtual Accounts" href="/" />
-                <NavLink icon="chart" title="Analytics" href="/" />
-                <NavLink icon="chart" title="Transactions" href="/" />
+                <NavLink icon="credit-card" title="Virtual Accounts" href="/virtual-accounts" />
+                <NavLink icon="chart" title="Analytics" href="/analytics" />
+                <NavLink icon="chart" title="Transactions" href="/transactions" />
             </div>
             <div className="py-xl">
                 <span className="nav-section-title">System</span>
-                <NavLink icon="cog-outlined" title="Settings" href="/" />
+                <NavLink icon="cog-outlined" title="Settings" href="/settings" />
             </div>
             <div className="py-xl">
                 <span className="nav-section-title">Portfolio</span>
