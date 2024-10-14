@@ -1,0 +1,18 @@
+.mainTable {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.thRow {}
+
+.thRow th:nth-child(2) {
+    width: 56px;
+}
+
+.thRow th {
+    padding-left: var(--s);
+    padding-right: var(--s);
+    text-align: start;
+    border-bottom: 1px solid #022b3a;
+}
