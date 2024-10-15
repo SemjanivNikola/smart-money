@@ -1,11 +1,33 @@
-import s from "./button.module.css"
+import Spinner from "../spinner/Spinner";
+import s from "./button.module.css";
 
-type ButtonProps = {
-    onClick: () => void;
+interface ButtonProps {
+  title: string;
+  status: boolean;
+  type?: "" | "transparent" | "danger" | "transparent-danger";
+  onClick: () => void;
+  icon: React.ReactElement;
 }
 
-const Button = ({ onClick }: ButtonProps) => {
-    return <button onClick={onClick} className={`${s.button} ${s.save}`} type="submit">Save</button>
-}
+const Button = ({ title, status, type = "", onClick, icon }: ButtonProps) => (
+  <button type="button" className={`btn-icon ${type}`} onClick={onClick} disabled={status}>
+    {status ? (
+      <Spinner />
+    ) : (
+      <>
+        {icon}
+        {title}
+      </>
+    )}
+  </button>
+);
+
+const SubmitButton = ({ title, status }: { title: string; status: boolean }) => (
+  <button type="submit" className="action" disabled={status}>
+    {status ? <Spinner /> : <>{title}</>}
+  </button>
+);
+
+Button.Submit = SubmitButton;
 
 export default Button;
