@@ -18,10 +18,10 @@ const SideBarNav = () => {
         <NavLink icon="credit-card" title="Payments" href="/payments" />
         <NavLink icon="credit-card" title="Cards" href="/cards" />
         <NavLink icon="chart" title="Analytics" href="/analytics" />
-        <NavLink icon="chart" title="Investments" href="/investments" />
+        {/* <NavLink icon="chart" title="Investments" href="/investments" />
         <NavLink icon="chart" title="Crypto" href="/crypto" />
         <NavLink icon="chart" title="Help Center" href="/help-center" />
-        <NavLink icon="chart" title="Transactions" href="/transactions" />
+        <NavLink icon="chart" title="Transactions" href="/transactions" /> */}
       </div>
       <QuickTransfer />
     </section>
