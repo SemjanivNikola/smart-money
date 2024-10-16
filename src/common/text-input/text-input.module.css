@@ -1,10 +1,18 @@
 .inputWrapper {
+    padding: var(--s) 0;
+    background-color: transparent;
+}
+
+.inputContainer {
     position: relative;
     display: flex;
     align-items: center;
-    gap: var(--s);
-    border-bottom: 2px solid var(--black);
-    background: transparent;
+    justify-content: flex-start;
+    background-color: var(--dim);
+    border: 1px solid transparent;
+    border-radius: 0.75rem;
+    padding: 0 var(--m);
+    margin-top: var(--s);
 }
 
 input.textInput {
@@ -13,63 +21,42 @@ input.textInput {
     border: none;
     font-size: var(--font-m);
     appearance: none;
-    background: inherit;
-    color: var(--dark);
+    background: transparent;
+    color: var(--light);
     padding: var(--s) var(--xs);
-}
-
-.focusIndicator {
-    display: block;
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    height: 2px;
-    width: 0;
-    background-color: var(--action);
-    transition: width 150ms ease-in-out;
+    caret-color: var(--primary);
 }
 
 .inputLabel {
-    position: absolute;
-    top: 50%;
-    left: 36px;
-    transition: all 150ms ease-out;
+    line-height: var(--line-height-s);
+    transition: color 150ms ease-out;
 }
 
+/* TODO: Try setting svg fill to primary on input focus */
 input.textInput:focus+.inputLabel,
 input.textInput:not([value=""])+.inputLabel {
-    top: -0.25rem;
-    left: 0;
-    font-size: var(--font-xs);
+    color: var(--primary);
 }
 
-input.textInput:focus+.inputLabel,
-input.textInput:focus~ svg {
-    color: var(--action);
+.inputContainer input.textInput:focus .inputContainer {
+    border-color: var(--primary);
 }
 
-input.textInput:focus~.focusIndicator {
-    width: 100%;
-}
-
-.inputError {
-    padding-top: var(--s);
+.helperText {
     font-size: var(--font-xs);
     font-weight: 500;
-    color: var(--danger);
-}
-
-.inputWrapper[data-error="true"] input.textInput {
-    color: var(--danger);
+    line-height: 15px;
+    padding-left: var(--m);
 }
 
 .inputWrapper[data-error="true"] .inputLabel,
+.inputWrapper[data-error="true"] .helperText
 .inputWrapper[data-error="true"] input.textInput:focus+.inputLabel {
     color: var(--danger);
 }
 
-.inputWrapper[data-error="true"] .focusIndicator {
-    background-color: var(--danger);
+.inputWrapper[data-error="true"] .inputContainer {
+    border-color: var(--danger);
 }
 
 .inputWrapper[data-error="true"] svg {
