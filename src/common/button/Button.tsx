@@ -1,33 +1,18 @@
+import { ButtonHTMLAttributes } from "react";
 import Spinner from "../spinner/Spinner";
-import s from "./button.module.css";
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;
-  status: boolean;
-  type?: "" | "transparent" | "danger" | "transparent-danger";
+  isLoading: boolean;
+  bStyle?: "primary" | "secondary" | "transparent" | "danger";
+  wide?: boolean;
   onClick: () => void;
-  icon: React.ReactElement;
 }
 
-const Button = ({ title, status, type = "", onClick, icon }: ButtonProps) => (
-  <button type="button" className={`btn-icon ${type}`} onClick={onClick} disabled={status}>
-    {status ? (
-      <Spinner />
-    ) : (
-      <>
-        {icon}
-        {title}
-      </>
-    )}
+const Button = ({ title, type, isLoading, bStyle = "primary", wide = false, onClick }: ButtonProps) => (
+  <button type={type} className={`button ${bStyle} ${wide ? "wide" : ""}`} onClick={onClick} disabled={isLoading}>
+    {isLoading ? <Spinner /> : <>{title}</>}
   </button>
 );
-
-const SubmitButton = ({ title, status }: { title: string; status: boolean }) => (
-  <button type="submit" className="action" disabled={status}>
-    {status ? <Spinner /> : <>{title}</>}
-  </button>
-);
-
-Button.Submit = SubmitButton;
 
 export default Button;
