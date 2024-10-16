@@ -17,13 +17,10 @@ const NavLink = ({
     const pathname = usePathname();
 
     return (
-        <Link
-            href={href}
-            className={pathname === href ? "active nav-link" : "nav-link"}
-        >
-            <Icon name={icon} color="#141414" />
-            <span>{title}</span>
-        </Link>
+      <Link href={href} className={pathname === href ? "active nav-link" : "nav-link"}>
+        <Icon name={icon} color="var(--dim)" />
+        {title}
+      </Link>
     );
 };
 

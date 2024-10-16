@@ -1,34 +1,31 @@
+import Pill from "@/src/common/pill/Pill";
 import NavButton from "./NavButton";
 import NavLink from "./NavLink";
+import QuickTransfer from "./QuickTransfer";
 
 const SideBarNav = () => {
-    return (
-        <section className="nav-wrapper px-m py-xl">
-            <h1>Smart Money</h1>
-            <div className="spacer-md" />
-            <div className="py-xl">
-                <span className="nav-section-title">General</span>
-                <NavLink
-                    icon="dashboard"
-                    title="Dashboard"
-                    href="/"
-                />
-                <NavLink icon="credit-card" title="Virtual Accounts" href="/virtual-accounts" />
-                <NavLink icon="chart" title="Analytics" href="/analytics" />
-                <NavLink icon="chart" title="Transactions" href="/transactions" />
-            </div>
-            <div className="py-xl">
-                <span className="nav-section-title">System</span>
-                <NavLink icon="cog-outlined" title="Settings" href="/settings" />
-            </div>
-            <div className="py-xl">
-                <span className="nav-section-title">Portfolio</span>
-                <span className="nav-section-title">Cash</span>
-                {/* List of bank holding, savings and cash in hand */}
-            </div>
-            <NavButton icon="signout" title="Sign out" />
-        </section>
-    );
+  return (
+    <section className="nav-wrapper">
+      <div className="py-m px-m">
+        <h1>Smart Money</h1>
+        <Pill text="Personal" />
+      </div>
+      <div className="spacer-md" />
+      <div className="py-m">
+        {/* <span className="nav-section-title">General</span> */}
+        <NavLink icon="dashboard" title="Overview" href="/" />
+        <NavLink icon="credit-card" title="Accounts" href="/accounts" />
+        <NavLink icon="credit-card" title="Payments" href="/payments" />
+        <NavLink icon="credit-card" title="Cards" href="/cards" />
+        <NavLink icon="chart" title="Analytics" href="/analytics" />
+        <NavLink icon="chart" title="Investments" href="/investments" />
+        <NavLink icon="chart" title="Crypto" href="/crypto" />
+        <NavLink icon="chart" title="Help Center" href="/help-center" />
+        <NavLink icon="chart" title="Transactions" href="/transactions" />
+      </div>
+      <QuickTransfer />
+    </section>
+  );
 };
 
 export default SideBarNav;
