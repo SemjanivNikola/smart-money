@@ -1,9 +1,9 @@
-import styles from "./page.module.css";
+import ScreenHeader from "@/src/components/screen-header/ScreenHeader";
 
 export default function Home() {
-    return (
-        <main className={styles.main}>
-            <h1>Smart Money</h1>
-        </main>
-    );
+  return (
+    <main className="main w-100 f col a-s">
+      <ScreenHeader title="Smart Money" />
+    </main>
+  );
 }

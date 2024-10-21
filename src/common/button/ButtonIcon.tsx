@@ -13,7 +13,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   onClick: () => void;
 }
 
-const ButtonIcon = ({ text, bStyle, color, iconSide, icon, onClick, size, iconColor }: ButtonProps) => {
+const ButtonIcon = ({ text, bStyle, color, iconSide, icon, onClick, size = 22, iconColor }: ButtonProps) => {
   let style = (bStyle + " " + color) as string;
   if (iconSide == "left") style += " reverse";
 
