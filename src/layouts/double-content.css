@@ -1,0 +1,13 @@
+.double-content{
+    flex-grow: 1;
+    min-height: 0;
+    padding-top: var(--lg);
+}
+
+.screen-content-divider {
+    width: 2px;
+    align-self: stretch;
+    flex-shrink: 0;
+    margin: 0 var(--xl);
+    background-color: var(--extra-dim);
+}

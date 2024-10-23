@@ -3,13 +3,13 @@ import Icon from "../icon/Icon";
 import { IconName } from "../icon/IconType";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  text: string;
+  text?: string;
   bStyle?: "primary" | "secondary" | "transparent" | "danger";
   iconSide?: "left" | "right";
   color?: "primary" | "light";
   icon: IconName;
   size?: number;
-  iconColor: string;
+  iconColor?: string;
   onClick: () => void;
 }
 

@@ -1,0 +1,42 @@
+#account-widget {
+    min-width: 415px;
+}
+
+#account-widget h2 {
+    position: relative;
+    font-size: 24px;
+    line-height: 26.4px;
+}
+
+#account-widget h2[data-multi="true"]::after {
+    content: attr(data-count);
+    position: absolute;
+    top: 2px;
+    right: -12px;
+    font-size: var(--font-m);
+    font-weight: 400;
+    line-height: var(--line-height-s);
+    margin-left: var(--s);
+}
+
+#account-widget .icon-backdrop {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+}
+
+#account-widget .balance {
+    font-size: var(--font-2xl);
+    line-height: 59.4px;
+    font-weight: 400;
+    margin-bottom: var(--s);
+}
+
+#account-widget .desc {
+    color: var(--text-gray);
+    font-size: var(--font-m);
+    line-height: var(--line-height-m);
+}

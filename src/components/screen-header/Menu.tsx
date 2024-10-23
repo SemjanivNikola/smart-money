@@ -12,7 +12,8 @@ const Menu = () => {
   const [cssClass, setCSSClass] = useState("");
 
   useEffect(() => {
-    dropdownMenuEl = document.querySelector("#dropdown-menu");
+    dropdownMenuEl = document.querySelector("#dropdown-menu") as HTMLDivElement;
+    dropdownMenuEl.style.display = "none";
   }, []);
 
   function toggleMenu() {

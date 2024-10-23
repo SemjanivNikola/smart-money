@@ -1,13 +1,18 @@
-.cardWrapper {
-    min-width: 390px;
+.cardWrapper, .accountWrapper {
+    width: 100%;
+    border: 1px solid var(--dim);
     padding: var(--s) var(--m);
-    border-radius: var(--border-radius);
-    background-color: var(--white);
-    -webkit-box-shadow: var(--box-shadow);
-    -moz-box-shadow: var(--box-shadow);
-    box-shadow: var(--box-shadow);
-    flex-grow: 0;
-    flex-shrink: 1;
+    border-radius: var(--border-radius-s);
+    background: transparent;
+}
+
+.accountWrapper {
+    padding: var(--m);
+}
+
+.spacer {
+    width: 100%;
+    height: 94px;
 }
 
 .cardBalance {
@@ -15,9 +20,15 @@
     padding: var(--xl) 0;
 }
 
-.cardSubText {
-    font-size: var(--font-s);
-    color: var(--gray); 
+.cardSubText, .status {
+    font-size: var(--font-m);
+    line-height: var(--line-height-s);
+    color: var(--dim); 
+}
+
+.cardSubText .subTextImportant {
+    display: inline;
+    color: var(--light);
 }
 
 .newCardBtn {
@@ -27,12 +38,22 @@
     align-items: center;
     justify-content: center;
     background-color: var(--gray-tone);
-    -webkit-box-shadow: var(--box-shadow);
-    -moz-box-shadow: var(--box-shadow);
-    box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
 }
 
-.circle {
+.aBalance {
+    margin-bottom: var(--s);
+}
+.aBalance, .aBalanceDim {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 26.4px;
+}
 
+.aBalance .aBalanceDim {
+    color: var(--dim);
+}
+
+.status {
+    color: var(--primary)
 }
