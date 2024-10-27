@@ -4,6 +4,10 @@
     padding-top: var(--lg);
 }
 
+.double-content > div:first-child {
+    flex-grow: 1;
+}
+
 .screen-content-divider {
     width: 2px;
     align-self: stretch;
