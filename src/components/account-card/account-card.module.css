@@ -1,5 +1,7 @@
 .cardWrapper, .accountWrapper {
     width: 100%;
+    max-width: 340px;
+    min-width: 278px;
     border: 1px solid var(--dim);
     padding: var(--s) var(--m);
     border-radius: var(--border-radius-s);
