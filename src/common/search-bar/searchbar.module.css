@@ -1,0 +1,24 @@
+#searchBar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--s);
+    padding: var(--m) var(--lg);
+    background-color: var(--dark-light);
+    border-radius: var(--border-radius-m);
+}
+
+#searchBar input {
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: var(--font-m);
+    appearance: none;
+    color: var(--dim);
+    background: transparent;
+    caret-color: var(--primary);
+}
+
+#searchBar input:focus {
+    color: var(--light);
+}
