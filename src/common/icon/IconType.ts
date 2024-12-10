@@ -5,6 +5,7 @@ export type IconName =
   | "chevron-right"
   | "close-drawer"
   | "cloud-upload"
+  | "cloud-gradient"
   | "cog-outlined"
   | "create-account"
   | "credit-card"

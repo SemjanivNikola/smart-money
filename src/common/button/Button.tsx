@@ -6,7 +6,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading: boolean;
   bStyle?: "primary" | "secondary" | "transparent" | "danger";
   wide?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const Button = ({ title, type, isLoading, bStyle = "primary", wide = false, onClick }: ButtonProps) => (

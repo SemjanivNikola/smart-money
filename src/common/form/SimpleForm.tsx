@@ -12,8 +12,8 @@ export default function SimpleForm({
     onSubmit: (event: FormEvent<HTMLFormElement>) => Promise<void>;
 }) {
     return (
-        <form action={action} className="py-m" onSubmit={onSubmit}>
-            {children}
-        </form>
+      <form action={action} className="py-m w-100" onSubmit={onSubmit}>
+        {children}
+      </form>
     );
 }

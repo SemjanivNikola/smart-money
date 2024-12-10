@@ -4,17 +4,29 @@
     background-color: transparent;
 }
 
-.inputContainer {
+.inputContainer, .inputContainerCol {
     position: relative;
     display: flex;
     
     align-items: center;
     justify-content: flex-start;
-    background-color: var(--dim);
+    background-color: var(--dark-dark);
     border: 1px solid transparent;
     border-radius: var(--border-radius-s);
     padding: 0 var(--m);
     margin-top: var(--s);
+}
+
+.inputContainerCol {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--s) var(--m);
+}
+
+.inputContainerCol input.textInput {
+    font-size: var(--font-xl);
+    padding: 0;
+    margin-bottom: var(--s);
 }
 
 input.textInput {
@@ -42,6 +54,11 @@ input.textInput:not([value=""])+.inputLabel {
 
 .inputContainer input.textInput:focus .inputContainer {
     border-color: var(--primary);
+}
+
+.inputContainerCol .helperText {
+    font-size: var(--font-s);
+    padding: 0;
 }
 
 .helperText {

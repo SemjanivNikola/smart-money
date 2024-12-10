@@ -4,21 +4,20 @@ import { Controller, FormProvider, useForm } from "react-hook-form";
 import DropdownArea from "../common/dropdown-area/DropdownArea";
 import SimpleForm from "../common/form/SimpleForm";
 import SimpleInput from "../common/text-input/SimpleInput";
+import TextInputWithDetail from "../common/text-input/TextInputWithDetail";
 
 interface TransactionType {
   total: number;
-  dateTime: string;
-  shop: string;
   account: string;
 }
 
-interface TransactionFormProps {
+interface PaymentFormProps {
   initialValues: TransactionType;
   onAPISubmit: (data: TransactionType, method: () => void) => void;
   formActionButtons: React.ReactElement;
 }
 
-const TransactionForm = ({ initialValues, onAPISubmit, formActionButtons }: TransactionFormProps) => {
+const PaymentForm = ({ initialValues, onAPISubmit, formActionButtons }: PaymentFormProps) => {
   const methods = useForm<TransactionType>({
     defaultValues: initialValues,
     mode: "onBlur",
@@ -31,7 +30,7 @@ const TransactionForm = ({ initialValues, onAPISubmit, formActionButtons }: Tran
   return (
     <FormProvider {...methods}>
       <SimpleForm onSubmit={methods.handleSubmit(onSubmit)}>
-        <div className="f row gap-m mb-m">
+        <div className="f col gap-m mb-m">
           <Controller
             name="total"
             control={methods.control}
@@ -39,46 +38,11 @@ const TransactionForm = ({ initialValues, onAPISubmit, formActionButtons }: Tran
               required: true,
             }}
             render={({ field: props }) => (
-              <SimpleInput
+              <TextInputWithDetail
                 type="text"
-                label="Total"
+                label="Send amount"
                 isFocused
-                icon="credit-card"
-                error={methods.formState.errors?.total?.message}
-                {...props}
-              />
-            )}
-          />
-          <Controller
-            name="dateTime"
-            control={methods.control}
-            rules={{
-              required: true,
-            }}
-            render={({ field: props }) => (
-              <SimpleInput
-                type="text"
-                label="Date and Time"
-                isFocused
-                icon="credit-card"
-                error={methods.formState.errors?.dateTime?.message}
-                {...props}
-              />
-            )}
-          />
-          <Controller
-            name="shop"
-            control={methods.control}
-            rules={{
-              required: true,
-            }}
-            render={({ field: props }) => (
-              <SimpleInput
-                type="text"
-                label="Shop"
-                isFocused
-                icon="credit-card"
-                error={methods.formState.errors?.shop?.message}
+                helperText="Balance: €6,950.00"
                 {...props}
               />
             )}
@@ -92,9 +56,8 @@ const TransactionForm = ({ initialValues, onAPISubmit, formActionButtons }: Tran
             render={({ field: props }) => (
               <SimpleInput
                 type="text"
-                label="Payment account"
+                label="Select a payment account"
                 isFocused
-                icon="credit-card"
                 error={methods.formState.errors?.account?.message}
                 {...props}
               />
@@ -108,4 +71,4 @@ const TransactionForm = ({ initialValues, onAPISubmit, formActionButtons }: Tran
   );
 };
 
-export default TransactionForm;
+export default PaymentForm;
