@@ -1,0 +1,11 @@
+.tab {
+    padding: 12px var(--m);
+    border-radius: var(--border-radius-m);
+    color: var(--text-gray);
+    background: transparent;
+}
+
+.tab.active {
+    background-color: var(--light);
+    color: var(--dark);
+}

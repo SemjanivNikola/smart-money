@@ -1,0 +1,18 @@
+.statusFilterWrapper {
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-light);
+    border-radius: var(--border-radius-m);
+    padding: var(--xs);
+}
+
+.filter {
+    color: var(--text-gray);
+    background: transparent;
+    border-radius: var(--border-radius-m);
+}
+
+.filter.active {
+    color: var(--dark);
+    background-color: var(--light);
+}

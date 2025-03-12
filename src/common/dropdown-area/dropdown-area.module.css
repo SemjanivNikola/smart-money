@@ -1,0 +1,28 @@
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-light);
+    padding: var(--s);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.boxWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    border: 1px dashed var(--black);
+    padding: var(--m);
+    border-radius: var(--border-radius);
+    background: transparent;
+}
+
+.boxHidden,
+.lUploading,
+.lSuccess,
+.lError {
+  display: none;
+}

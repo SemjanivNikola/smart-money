@@ -1,0 +1,19 @@
+.quick-action-link {
+    width: 120px;
+    height: 157px;
+    padding-top: var(--m);
+    padding-bottom: var(--lg);
+    background-color: var(--dark-light);
+}
+
+.icon-bg {
+    width: 60px;
+    height: 60px;
+    padding: var(--m);
+    border-radius: var(--border-round);
+    background-color: var(--extra-dim);
+}
+
+.quick-action-link p {
+    text-align: center;
+}

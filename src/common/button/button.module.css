@@ -1,0 +1,13 @@
+.button {
+    padding: var(--m) var(--lg);
+    border-radius: var(--border-radius);
+    font-size: var(--font-m);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.button.save {
+    text-transform: uppercase;
+    background-color: var(--action);
+    color: var(--white);
+}

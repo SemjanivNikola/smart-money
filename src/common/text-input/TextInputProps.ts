@@ -1,19 +1,20 @@
-import { InputHTMLAttributes, ReactNode } from "react";
+import { ChangeEvent, InputHTMLAttributes } from "react";
+import { IconName } from "../icon/IconType";
 
-interface TextInputProps {
-    id: string;
-    type: InputHTMLAttributes<HTMLInputElement>["type"];
-    name: string;
-    autoComplete?: InputHTMLAttributes<HTMLInputElement>["autoComplete"];
-    isFocused?: boolean;
-    error?: string;
-    label: string;
-    value?: InputHTMLAttributes<HTMLInputElement>["value"];
-    readOnly?: InputHTMLAttributes<HTMLInputElement>["readOnly"];
-    required?: InputHTMLAttributes<HTMLInputElement>["required"];
-    onChange: (e: any) => void;
-}
+export type SimpleInputProps = {
+  name: string;
+  type: InputHTMLAttributes<HTMLInputElement>["type"];
+  value: InputHTMLAttributes<HTMLInputElement>["value"];
+  autoComplete?: InputHTMLAttributes<HTMLInputElement>["autoComplete"];
+  disabled?: boolean;
+  isFocused?: boolean;
+  error?: string;
+  helperText?: string;
+  label: string;
+  onBlur?: () => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  children?: React.ReactElement;
+};
 
-export type TooltipTextInputProps = TextInputProps & { children: ReactNode };
-
-export default TextInputProps;
+export type PasswordInputProps = Omit<SimpleInputProps, "type">;
+export type TextInputProps = Omit<SimpleInputProps, "children">;

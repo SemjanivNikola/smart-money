@@ -1,0 +1,45 @@
+.h-balance, .h-balance-dim {
+    display: inline-block;
+    font-size: var(--font-2xl);
+    line-height: 59.4px;
+}
+
+.h-balance .h-balance-dim {
+    color: var(--dim);
+}
+
+.h-desc {
+    font-size: var(--font-mlg);
+    color: var(--text-gray);
+}
+
+.h-desc span {
+    display: inline-block;
+    font-size: inherit;
+    color: var(--primary);
+}
+
+/* Dodano iz account-widget.css*/
+h2 {
+    position: relative;
+    font-size: 24px;
+    line-height: 26.4px;
+}
+h2::after {
+    content: attr(data-count);
+    position: absolute;
+    top: 6px;
+    right: -18px;
+    font-size: var(--font-m);
+    font-weight: 400;
+    line-height: var(--line-height-s);
+    margin-left: var(--s);
+}
+.h-icon-backdrop {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+}

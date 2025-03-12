@@ -1,47 +1,89 @@
-.input {
+.inputWrapper {
     width: 100%;
-    height: 32px;
+    padding: var(--s) 0;
+    background-color: transparent;
+}
+
+.inputContainer, .inputContainerCol {
+    position: relative;
+    display: flex;
+    
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--dark-dark);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius-s);
+    padding: 0 var(--m);
+    margin-top: var(--s);
+}
+
+.inputContainerCol {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--s) var(--m);
+}
+
+.inputContainerCol input.textInput {
+    font-size: var(--font-xl);
+    padding: 0;
+    margin-bottom: var(--s);
+}
+
+input.textInput {
+    width: 100%;
     outline: none;
     border: none;
     font-size: var(--font-m);
-    border-bottom: 2px solid var(--gray);
     appearance: none;
-    background-color: var(--white);
-    color: var(--black);
-    padding-top: var(--s);
-}
-
-.input:focus + .inputLabel,
-.input:not([value=""]) + .inputLabel,
-textarea:focus + .inputLabel,
-textarea:not([value=""]) + .inputLabel {
-    top: 0;
-    font-size: var(--font-s);
+    background: transparent;
+    color: var(--light);
+    padding: var(--s) var(--xs);
+    caret-color: var(--primary);
 }
 
 .inputLabel {
-    top: 50%;
-    left: 0;
-    transition: all 150ms ease-out;
+    line-height: var(--line-height-s);
+    transition: color 150ms ease-out;
 }
 
-.inputError {
-    height: var(--m);
-    padding-top: var(--s);
+/* TODO: Try setting svg fill to primary on input focus */
+input.textInput:focus+.inputLabel,
+input.textInput:not([value=""])+.inputLabel {
+    color: var(--primary);
+}
+
+.inputContainer input.textInput:focus .inputContainer {
+    border-color: var(--primary);
+}
+
+.inputContainerCol .helperText {
+    font-size: var(--font-s);
+    padding: 0;
+}
+
+.helperText {
     font-size: var(--font-xs);
     font-weight: 500;
-    color: rgb(239 68 68);
+    line-height: 15px;
+    padding-left: var(--m);
 }
 
-.textarea {
-    width: 100%;
-    outline: none;
+.inputWrapper[data-error="true"] .inputLabel,
+.inputWrapper[data-error="true"] .helperText
+.inputWrapper[data-error="true"] input.textInput:focus+.inputLabel {
+    color: var(--danger);
+}
+
+.inputWrapper[data-error="true"] .inputContainer {
+    border-color: var(--danger);
+}
+
+.inputWrapper[data-error="true"] svg {
+    fill: var(--danger);
+}
+
+.togglePassTypeBtn {
     border: none;
-    font-size: var(--font-m);
-    border-bottom: 2px solid var(--gray);
-    appearance: none;
-    background-color: var(--white);
-    color: var(--black);
-    padding-top: var(--s);
-    resize: none;
+    outline: none!important;
+    background: transparent;
 }
