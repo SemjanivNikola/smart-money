@@ -3,14 +3,14 @@
 import Icon from "@/src/common/icon/Icon";
 import Link from "next/link";
 import "./account-widget.css";
-import AccountCard from "../../account-card/AccountCard";
+import WalletCard from "../../wallet-card/WalletCard";
 
-const AccountWidget = () => {
+const WalletWidget = () => {
   return (
     <div id="account-widget">
       <div className="f a-c j-sb gap-s" style={{ marginBottom: "var(--m)" }}>
         <h2 data-multi="true" data-count="1">
-          Accounts
+          Wallets
         </h2>
         <Link href="/" className="f a-c gap-m">
           Add new
@@ -24,10 +24,10 @@ const AccountWidget = () => {
         <span className="desc">Your balance (USD)</span>
       </div>
       <div className="" style={{ paddingTop: "var(--m)" }}>
-        <AccountCard.Account />
+        <WalletCard.Wallet />
       </div>
     </div>
   );
 };
 
-export default AccountWidget;
+export default WalletWidget;

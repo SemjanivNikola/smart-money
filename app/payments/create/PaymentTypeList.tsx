@@ -5,19 +5,19 @@ const PaymentTypeList = () => {
     <div className="f col gap-s">
       <PaymentTypeItem
         title="Regular"
-        description="Simple payments. E.g. groceries"
+        description="Simple payments and transfers. E.g. groceries or house utilities"
         icon="cloud-gradient"
-        href="create/regular/amount"
+        href="create/regular"
       />
       <PaymentTypeItem
         title="Internal transfer"
-        description="Send to users inside Smart Money"
+        description="Move money between your accounts and cards"
         icon="cloud-gradient"
         href="create/internal-transfer"
       />
       <PaymentTypeItem
         title="Subscription"
-        description="Send to users inside Smart Money"
+        description="Automate known, monthly expenses"
         icon="cloud-gradient"
         href="create/subscription"
       />

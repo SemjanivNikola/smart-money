@@ -1,7 +1,7 @@
 // import styles from "./page.module.css";
 
 import Table from "@/src/common/table/Table";
-import NewAccountCard from "@/src/components/account-card/NewAccountCard";
+import NewAccountCard from "@/src/components/wallet-card/NewAccountCard";
 import ColumnBarGraph from "@/src/components/graph/ColumnBarGraph";
 // import PieChart from "@/src/components/graph/PieChart";
 import ScreenHeader from "@/src/components/screen-header/ScreenHeader";

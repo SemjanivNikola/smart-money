@@ -1,9 +1,9 @@
 "use client";
 
 import ButtonIcon from "@/src/common/button/ButtonIcon";
-import s from "./account-card.module.css";
+import s from "./wallet-card.module.css";
 
-const AccountCard = () => {
+const WalletCard = () => {
   return (
     <div className={s.cardWrapper}>
       <div className="f row py-s">
@@ -21,9 +21,9 @@ const AccountCard = () => {
   );
 };
 
-const Account = () => {
+const Wallet = () => {
   return (
-    <div className={s.accountWrapper}>
+    <div className={s.walletWrapper}>
       <div className="f a-c j-sb gap-m">
         <div className="f a-c gap-s">
           <div className="avatar sm">
@@ -47,6 +47,6 @@ const Account = () => {
   );
 };
 
-AccountCard.Account = Account;
+WalletCard.Wallet = Wallet;
 
-export default AccountCard;
+export default WalletCard;

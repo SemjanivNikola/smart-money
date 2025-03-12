@@ -1,4 +1,4 @@
-.cardWrapper, .accountWrapper {
+.cardWrapper, .walletWrapper {
     width: 100%;
     max-width: 340px;
     min-width: 278px;
@@ -8,7 +8,7 @@
     background: transparent;
 }
 
-.accountWrapper {
+.walletWrapper {
     padding: var(--m);
 }
 
