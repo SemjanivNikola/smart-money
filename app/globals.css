@@ -480,6 +480,16 @@ button.nav-btn {
   cursor: pointer;
 }
 
+.top-bar-nav {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: .75rem;
+  -moz-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+  box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+  background-color: #fff;
+}
+
 /* ------------------------------ */
 .spacer-s {
   height: var(--m);
@@ -487,6 +497,11 @@ button.nav-btn {
 
 .spacer-md {
   height: var(--xl);
+}
+.divider-horizontal {
+  width: 2px;
+  height: 25px;
+  background-color: rgba(0, 0, 0, .45);
 }
 
 /* ------------------------------ */
@@ -521,6 +536,24 @@ button.nav-btn {
 .py-2 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+.py-05 {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+.pt-05 {
+  padding-top: .5rem;
+}
+.pb-1 {
+  padding-bottom: 1rem;
+}
+.pb-1-5 {
+  padding-bottom: 1.5rem;
+}
+
+/* ------------------------------ */
+.block {
+  display: block;
 }
 
 .py-s {
@@ -566,6 +599,9 @@ button.nav-btn {
 .align-center {
   align-items: center;
 }
+.align-end {
+  align-items: flex-end;
+}
 .justify-start {
   justify-content: flex-start;
 }
@@ -575,8 +611,14 @@ button.nav-btn {
 .justify-between {
   justify-content: space-between;
 }
+.justify-even {
+  justify-content: space-between;
+}
 .gap-05 {
   gap: .5rem
+}
+.gap-1-5 {
+  gap: 1.5rem;
 }
 
 /* ------------------------------ */
