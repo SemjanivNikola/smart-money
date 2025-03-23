@@ -5,9 +5,15 @@ const PaymentTypeList = () => {
     <div className="f col gap-s">
       <PaymentTypeItem
         title="Regular"
-        description="Simple payments and transfers. E.g. groceries or house utilities"
+        description="Simple payments and transfers. E.g. house utilities"
         icon="cloud-gradient"
         href="create/regular"
+      />
+      <PaymentTypeItem
+        title="Shopping"
+        description="Al kind of shopping activities. E.g. groceries"
+        icon="cloud-gradient"
+        href="create/shopping"
       />
       <PaymentTypeItem
         title="Internal transfer"
