@@ -8,7 +8,7 @@ import TableHeader from "./TableHeader";
 
 const TableOuter = () => {
   return (
-    <div className="card px-m py-m">
+    <div className="card py-m">
       <table className={s.mainTable}>
         <thead>
           <tr className={s.thRow}>
