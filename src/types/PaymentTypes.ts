@@ -15,10 +15,14 @@ export interface AdditionalInvoiceData {
 
 export type ItemsInvoiceData = ArticleType[];
 
-interface ArticleType {
+export interface ArticleType {
   name: string;
-  // quantity: number;
-  // unitPrice: number;
-  // totalPrice: number;
-  // vat: number;
+  quantity: number;
+  unitPrice: number;
+  total: number;
+  vat: number;
+}
+
+export interface IInvoiceItemForm {
+  articles: ItemsInvoiceData;
 }
