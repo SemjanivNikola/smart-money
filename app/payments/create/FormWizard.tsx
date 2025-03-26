@@ -22,7 +22,7 @@ const FormWizard = ({ formList }: FormWizardProps) => {
         style={{ width: "inherit" }}
       >
         {formList.map(({ title, component, style }) => (
-          <FormWizardItem title={title} component={component} style={style} />
+          <FormWizardItem key={title} title={title} component={component} style={style} />
         ))}
       </motion.div>
     </div>
