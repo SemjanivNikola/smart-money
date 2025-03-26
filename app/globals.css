@@ -132,6 +132,7 @@ body {
 .main {
   padding: 2rem 2.5rem;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 
