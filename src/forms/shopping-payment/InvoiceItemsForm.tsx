@@ -2,12 +2,11 @@
 
 import { createPayment } from "@/api/createPayment";
 import FormActionBar from "@/src/common/form/FormActionBar";
-import { ItemsInvoiceData } from "@/src/types/PaymentTypes";
-import { useFieldArray, useForm } from "react-hook-form";
-
-interface IInvoiceItemForm {
-  articles: ItemsInvoiceData;
-}
+import { IInvoiceItemForm, ItemsInvoiceData } from "@/src/types/PaymentTypes";
+import { FormProvider, useForm } from "react-hook-form";
+import InvoiceItemTable from "./InvoiceItemTable";
+import { FieldArrayProvider } from "../../providers/FieldArrayProvider";
+import InvoiceWorkingRow from "./InvoiceWorkingRow";
 
 const InvoiceItemsForm = ({ initialValues }: { initialValues: ItemsInvoiceData }) => {
   const onAPISubmit = async (data: IInvoiceItemForm) =>
@@ -21,36 +20,27 @@ const InvoiceItemsForm = ({ initialValues }: { initialValues: ItemsInvoiceData }
         console.error("Error submitting form: ", error.message);
       });
 
-  const { register, handleSubmit, control, formState } = useForm<IInvoiceItemForm>({
+  const methods = useForm<IInvoiceItemForm>({
     defaultValues: { articles: initialValues },
     mode: "onBlur",
   });
-  const { fields, append } = useFieldArray({
-    control,
-    name: "articles",
-  });
 
   return (
-    <form onSubmit={handleSubmit(onAPISubmit)} className="w-100 pb-5">
-      <div className="f col gap-m mb-m h-100">
-        <input
-          onKeyUp={(e: React.KeyboardEvent<HTMLInputElement>) => {
-            console.log(typeof e);
-            if (e.key === "Enter") {
-              append({ name: e.currentTarget.value }, { shouldFocus: false });
-              e.currentTarget.value = "";
-              e.currentTarget.focus();
-            }
-          }}
-        />
-        <div className="form-controller-fields f col gap-m h-100">
-          {fields.map((field, index) => {
-            return <input key={field.id} {...register(`articles.${index}.name` as const)} />;
-          })}
-        </div>
-      </div>
-      <FormActionBar title="Review & Store" isLoading={formState.isLoading} />
-    </form>
+    <div className="w-100 pb-5">
+      <FieldArrayProvider control={methods.control} name="articles">
+        <InvoiceWorkingRow />
+        <FormProvider {...methods}>
+          <form onSubmit={methods.handleSubmit(onAPISubmit)}>
+            <div className="f col gap-m mb-m h-100" style={{ overflow: "hidden" }}>
+              <div className="form-controller-fields f col gap-m h-100">
+                <InvoiceItemTable headers={["Name", "Unit price", "Quantity", "VAT", "Total"]} />
+              </div>
+            </div>
+            <FormActionBar title="Review & Store" isLoading={methods.formState.isLoading} />
+          </form>
+        </FormProvider>
+      </FieldArrayProvider>
+    </div>
   );
 };
 
