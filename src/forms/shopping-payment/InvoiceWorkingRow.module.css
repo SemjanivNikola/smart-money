@@ -1,0 +1,48 @@
+.workRowWrapper {
+    border-width: 1px;
+    border-radius: var(--border-radius-s);
+    border-color: var(--dim);
+    border-style: solid;
+    padding: var(--lg) var(--m) var(--s);
+    margin-top: var(--s);
+    margin-bottom: var(--lg);
+    overflow: visible;
+}
+
+.sectionTitle {
+    width: max-content;
+    font-size: var(--font-s);
+    font-weight: 400;
+    letter-spacing: 0.08rem;
+    background-color: var(--dark);
+    margin-top: calc((var(--lg) + var(--s)) * -1);
+    padding: 0 var(--s);
+}
+
+.tdInput {
+    width: 100%;
+    height: 100%;
+    border: none;
+    stroke: none;
+    font-size: var(--font-m);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+}
+
+.tdInputWrapper {
+    padding: var(--s);
+    overflow: hidden;
+}
+
+.tdInput {
+    height: auto;
+    padding: var(--m);
+    border-radius: 0;
+    user-select: all;
+}
+
+.tdInputWrapper[data-align="center"] .tdInput {
+    text-align: center;
+}

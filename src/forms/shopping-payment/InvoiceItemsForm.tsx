@@ -33,7 +33,9 @@ const InvoiceItemsForm = ({ initialValues }: { initialValues: ItemsInvoiceData }
           <form onSubmit={methods.handleSubmit(onAPISubmit)}>
             <div className="f col gap-m mb-m h-100" style={{ overflow: "hidden" }}>
               <div className="form-controller-fields f col gap-m h-100">
-                <InvoiceItemTable headers={["Name", "Unit price", "Quantity", "VAT", "Total"]} />
+                <InvoiceItemTable
+                  headers={["Name", "Unit price (€)", "Quantity (p. | kg/€)", "VAT (%)", "Total (€)"]}
+                />
               </div>
             </div>
             <FormActionBar title="Review & Store" isLoading={methods.formState.isLoading} />

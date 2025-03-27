@@ -992,7 +992,7 @@ button.notification.badge {
   position: relative;
   flex-grow: 1;
   flex-shrink: 0;
-  padding: 0 var(--m);
+  padding: 0 var(--xs);
   overflow: hidden;
 }
 

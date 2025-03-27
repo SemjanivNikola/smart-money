@@ -1,15 +1,18 @@
 import { IInvoiceItemForm } from "@/src/types/PaymentTypes";
 import InvoiceItemTableUnit from "./InvoiceItemTableUnit";
 import { useFieldArray } from "../../providers/FieldArrayProvider";
+import s from "../../common/table/Table.module.css";
 
 const InvoiceItemTable = ({ headers }: { headers: string[] }) => {
   const { fields } = useFieldArray<IInvoiceItemForm>();
   return (
-    <table>
+    <table className={s.mainTable}>
       <thead>
-        <tr>
+        <tr className={s.thRow}>
           {headers.map((title) => (
-            <th>{title}</th>
+            <th key={title} style={{ textAlign: "center" }}>
+              {title}
+            </th>
           ))}
         </tr>
       </thead>
