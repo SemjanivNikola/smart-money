@@ -1,14 +1,5 @@
-import {
-    DataObject,
-    ErrorsObject,
-    FormProps,
-    Register,
-    RemoveError,
-    SetData,
-    SetError,
-    SubmitForm,
-} from "@/src/types/FormProps";
-import { InputHTMLAttributes, useState } from "react";
+import { ErrorsObject, FormProps, Register, RemoveError, SetData, SetError, SubmitForm } from "@/src/types/FormProps";
+import { useState } from "react";
 
 export function useForm<T extends Record<string, string | number | readonly string[] | undefined>>(
   initialValues: T
@@ -30,6 +21,10 @@ export function useForm<T extends Record<string, string | number | readonly stri
       delete newErrors[name];
       return newErrors;
     });
+  };
+
+  const clearData = () => {
+    setData(initialValues);
   };
 
   const register: Register<T> = (name, type = "text") => {
@@ -55,6 +50,7 @@ export function useForm<T extends Record<string, string | number | readonly stri
     e.stopPropagation();
 
     customSubmit(data);
+    clearData();
   };
 
   return {
