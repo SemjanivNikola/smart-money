@@ -2,13 +2,14 @@
 
 import { useWizardStepper } from "@/src/hooks/useWizardStepper";
 import { motion } from "motion/react";
-import FormWizardItem, { FormWizardItemProps } from "./FormWizardItem";
+import { ReactElement } from "react";
 
 type FormWizardProps = {
-  formList: FormWizardItemProps[];
+  children: ReactElement[];
+  initStep: number;
 };
 
-const FormWizard = ({ formList }: FormWizardProps) => {
+const FormWizard = ({ children, initStep }: FormWizardProps) => {
   const { step } = useWizardStepper();
 
   return (
@@ -16,14 +17,12 @@ const FormWizard = ({ formList }: FormWizardProps) => {
       <motion.div
         className="f gap-m h-100"
         animate={{
-          x: `${step}%`,
+          x: `${initStep}%`,
         }}
         transition={{ type: "spring", stiffness: 100, damping: 18 }}
         style={{ width: "inherit" }}
       >
-        {formList.map(({ title, component, style }) => (
-          <FormWizardItem key={title} title={title} component={component} style={style} />
-        ))}
+        {children}
       </motion.div>
     </div>
   );
