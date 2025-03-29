@@ -2,14 +2,19 @@
 
 import { createPayment } from "@/api/createPayment";
 import FormActionBar from "@/src/common/form/FormActionBar";
+import { AdditionalInvoiceData } from "@/src/types/PaymentTypes";
 import { Controller, useForm } from "react-hook-form";
 import DropdownArea from "../../common/dropdown-area/DropdownArea";
 import SimpleForm from "../../common/form/SimpleForm";
 import SimpleInput from "../../common/text-input/SimpleInput";
-import { TransactionCategoryEnum } from "../../enums/PaymentEnum";
-import { AdditionalInvoiceData } from "@/src/types/PaymentTypes";
 
-const AdditionalInvoiceInfoForm = ({ initialValues }: { initialValues: AdditionalInvoiceData }) => {
+const AdditionalInvoiceInfoForm = ({
+  initialValues,
+  isActive = false,
+}: {
+  initialValues: AdditionalInvoiceData;
+  isActive: boolean;
+}) => {
   const methods = useForm<AdditionalInvoiceData>({
     defaultValues: initialValues,
     mode: "onBlur",
@@ -41,6 +46,7 @@ const AdditionalInvoiceInfoForm = ({ initialValues }: { initialValues: Additiona
               type="text"
               label="Place it to category"
               error={methods.formState.errors?.category?.message}
+              isFocused={isActive}
               {...props}
             />
           )}

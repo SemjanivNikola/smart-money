@@ -3,6 +3,7 @@ import { useForm } from "@/src/hooks/useForm";
 import { ArticleType, IInvoiceItemForm } from "@/src/types/PaymentTypes";
 import { useFieldArray } from "../../providers/FieldArrayProvider";
 import s from "./InvoiceWorkingRow.module.css";
+import { useRef } from "react";
 
 const INIT = {
   name: "",
@@ -11,24 +12,36 @@ const INIT = {
   vat: 0,
 };
 
-const InvoiceWorkingRow = () => {
+const InvoiceWorkingRow = ({ isFocused = false }: { isFocused: boolean }) => {
   const { register, onSubmit } = useForm(INIT);
   const { append } = useFieldArray<IInvoiceItemForm>();
+  const nameInputEl = useRef<HTMLInputElement>(null);
 
   function handleSubmit(data: Omit<ArticleType, "total">) {
     const total = data.unitPrice * data.quantity;
 
-    append({
-      ...data,
-      total: total,
-    });
+    append(
+      {
+        ...data,
+        total: total,
+      },
+      { shouldFocus: false }
+    );
+
+    nameInputEl.current?.focus();
   }
 
   return (
     <div className={s.workRowWrapper}>
       <h3 className={s.sectionTitle}>Working row</h3>
       <form className="f gap-m" onSubmit={onSubmit(handleSubmit)}>
-        <SimpleInput label="Name" {...register("name")} placeholder="Baguette" />
+        <SimpleInput
+          ref={nameInputEl}
+          label="Name"
+          {...register("name")}
+          placeholder="Baguette"
+          isFocused={isFocused}
+        />
         <SimpleInput label="Unit price" {...register("unitPrice", "number")} placeholder="0.89" />
         <SimpleInput label="Quantity" {...register("quantity", "number")} placeholder="1" />
         <SimpleInput label="VAT" {...register("vat", "number")} placeholder="23%" />

@@ -8,7 +8,7 @@ import InvoiceItemTable from "./InvoiceItemTable";
 import { FieldArrayProvider } from "../../providers/FieldArrayProvider";
 import InvoiceWorkingRow from "./InvoiceWorkingRow";
 
-const InvoiceItemsForm = ({ initialValues }: { initialValues: ItemsInvoiceData }) => {
+const InvoiceItemsForm = ({ initialValues, isActive }: { initialValues: ItemsInvoiceData; isActive: boolean }) => {
   const onAPISubmit = async (data: IInvoiceItemForm) =>
     await createPayment(data)
       .then((response: any) => {
@@ -28,7 +28,7 @@ const InvoiceItemsForm = ({ initialValues }: { initialValues: ItemsInvoiceData }
   return (
     <div className="w-100 pb-5">
       <FieldArrayProvider control={methods.control} name="articles">
-        <InvoiceWorkingRow />
+        <InvoiceWorkingRow isFocused={isActive} />
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onAPISubmit)}>
             <div className="f col gap-m mb-m h-100" style={{ overflow: "hidden" }}>

@@ -52,7 +52,7 @@ input.textInput:not([value=""])+.inputLabel {
     color: var(--primary);
 }
 
-.inputContainer input.textInput:focus .inputContainer {
+.inputContainer:focus-within {
     border-color: var(--primary);
 }
 

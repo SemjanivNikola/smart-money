@@ -34,7 +34,11 @@ export async function fetchShoppingPaymentDraft(): Promise<ShoppingPaymentDraftT
     },
     initItemsData: [
       {
-        name: "test input 1",
+        name: "test item 1",
+        unitPrice: 1.38,
+        quantity: 2,
+        vat: 23,
+        total: 2.76,
       },
     ],
     initStep: 0,

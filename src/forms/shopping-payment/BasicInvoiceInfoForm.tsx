@@ -1,15 +1,14 @@
 "use client";
 
 import { createPayment } from "@/api/createPayment";
+import FormActionBar from "@/src/common/form/FormActionBar";
+import { BasicInvoiceData } from "@/src/types/PaymentTypes";
 import { Controller, useForm } from "react-hook-form";
 import DropdownArea from "../../common/dropdown-area/DropdownArea";
 import SimpleForm from "../../common/form/SimpleForm";
 import SimpleInput from "../../common/text-input/SimpleInput";
-import { PaymentTypeEnum } from "../../enums/PaymentEnum";
-import FormActionBar from "@/src/common/form/FormActionBar";
-import { BasicInvoiceData } from "@/src/types/PaymentTypes";
 
-const BasicInvoiceInfoForm = ({ initialValues }: { initialValues: BasicInvoiceData }) => {
+const BasicInvoiceInfoForm = ({ initialValues, isActive }: { initialValues: BasicInvoiceData; isActive: boolean }) => {
   const methods = useForm<BasicInvoiceData>({
     defaultValues: initialValues,
     mode: "onBlur",
@@ -40,6 +39,7 @@ const BasicInvoiceInfoForm = ({ initialValues }: { initialValues: BasicInvoiceDa
             <SimpleInput
               type="text"
               label="Where did shopping took place?"
+              isFocused={isActive}
               error={methods.formState.errors?.shop?.message}
               {...props}
             />
@@ -51,7 +51,7 @@ const BasicInvoiceInfoForm = ({ initialValues }: { initialValues: BasicInvoiceDa
           rules={{
             required: true,
           }}
-          render={({ field: props }) => <SimpleInput type="text" label="Invoice date" isFocused {...props} />}
+          render={({ field: props }) => <SimpleInput type="text" label="Invoice date" {...props} />}
         />
         <Controller
           name="account"
