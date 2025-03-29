@@ -1,3 +1,5 @@
+import "./create-payment.css";
+
 const PaymentWizard = ({ activeStep = 1 }: { activeStep?: number }) => {
   const step1Class = activeStep === 1 ? "step active" : "step";
   const step2Class = activeStep === 2 ? "step active" : "step";
@@ -5,11 +7,11 @@ const PaymentWizard = ({ activeStep = 1 }: { activeStep?: number }) => {
   const step4Class = activeStep === 4 ? "step active" : "step";
 
   return (
-    <div className="f gap-m" style={{ flexShrink: 0, flexGrow: 1, minWidth: "20%" }}>
+    <div className="f gap-m" style={{ flexShrink: 0, flexGrow: 1, minWidth: "18%", maxWidth: "23%" }}>
       <div className="px-s" style={{ paddingBottom: "var(--lg)" }}>
         <span className="step-indicartor-line" />
       </div>
-      <div className="f col">
+      <div className="f col gap-m">
         <div className={step1Class}>
           <span>Step 1</span>
           <h4>Amount & Account</h4>
