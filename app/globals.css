@@ -827,6 +827,7 @@ button.notification.badge {
   padding: var(--xs) var(--m) var(--xs) var(--xs);
   background-color: var(--extra-dim);
   border-radius: var(--border-radius-m);
+  z-index: 99;
 }
 
 #dropdown-menu, #dropdown-notifications {
