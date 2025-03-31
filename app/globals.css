@@ -102,6 +102,9 @@
   * {
     color: var(--light);
   }
+  h1, h2, h3, h4, h5, h6, p, span {
+    color: inherit;
+  }
 }
 
 * {
@@ -406,7 +409,7 @@ main.main-layout {
   color: #141414;
 }
 main.main-layout.auth {
-  background-image: var(--gradient-action);
+  background-color: var(--gray-dark);
   align-items: center;
   justify-content: center;
 }
