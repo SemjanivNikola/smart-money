@@ -1,5 +1,5 @@
 import Table from "@/src/common/table/Table";
-import TablePaymentActions from "./TablePaymentActions";
+import TablePaymentActions from "../../common/table/TablePaymentActions";
 
 const PaymentList = () => {
   return (

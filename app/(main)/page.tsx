@@ -2,7 +2,7 @@ import TableWrapper from "@/src/common/table/TableWrapper";
 import AccountWidget from "@/src/components/page-components/accounts-widget/AccountsWidget";
 import ScreenHeader from "@/src/components/screen-header/ScreenHeader";
 import DoubleContentPage from "@/src/layouts/DoubleContentPage";
-import QuickActionBar from "../src/components/quick-action-bar/QuickActionBar";
+import QuickActionBar from "../../src/components/quick-action-bar/QuickActionBar";
 
 export default function Home() {
   const MainContent = () => {
