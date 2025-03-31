@@ -1,45 +1,35 @@
-"use client";
-
-import { useState } from "react";
-import s from "./signIn.module.css";
+import LoginForm from "@/src/forms/LoginForm";
 import DoubleContentPage from "@/src/layouts/DoubleContentPage";
-import TextInputWithDetail from "@/src/common/text-input/TextInputWithDetail";
-import SimpleInput from "@/src/common/text-input/SimpleInput";
-import Button from "@/src/common/button/Button";
+import Image from "next/image";
+import Link from "next/link";
+import googleIcon from "../../../assets/images/google.png";
+import s from "./signIn.module.css";
+
+const LoginInitData = {
+  email: "",
+  password: "",
+};
 
 const MainContent = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   return (
-    <div className="f col a-s gap-lg" style={{ maxWidth: "52%", margin: "0 auto" }}>
+    <div
+      id={s.loginFormWrapper}
+      className="f col a-s gap-lg"
+      style={{ margin: "0 auto", padding: "var(--3xl) 0", maxWidth: "67%" }}
+    >
       <div className={s.formHeader}>
         <h2 className="mb-m">Welcome back!</h2>
         <p>Enter the e-mail address associated with your Smart Money account</p>
       </div>
-      <form className="f col gap-s w-100">
-        <SimpleInput
-          label=""
-          name="email"
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <SimpleInput
-          label=""
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Button title="Sign In" type="submit" bStyle="primary" isLoading={false} />
-      </form>
+      <LoginForm initData={LoginInitData} />
       <div className={s.orSpliter}>
         <span>or</span>
       </div>
       <div className="w-100">
-        <Button title="Continue with Google" bStyle="secondary" isLoading={false} wide />
+        <Link href="" className={s.iconLink}>
+          <Image src={googleIcon} width={16} height={16} alt="Google icon" />
+          <span>Continue with Google</span>
+        </Link>
       </div>
     </div>
   );
@@ -48,7 +38,14 @@ const MainContent = () => {
 const SideContent = () => {
   return (
     <div className={s.qrCodeWrapper}>
-      <div className={s.qrCodePlaceholder} />
+      <div className="f col gap-lg" style={{ width: "min-content" }}>
+        <div className={s.qrCodePlaceholder} />
+        <div className="spacer-md" />
+        <div className={s.helperText}>
+          <h4 className="mb-m">Sign in with QR code</h4>
+          <p>Scan this code with your phone camera to sign in instantly</p>
+        </div>
+      </div>
     </div>
   );
 };
