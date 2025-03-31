@@ -164,10 +164,12 @@ button:focus-visible {
 /* =========== BUTTON =========== */
 button.button.wide {
   width: 100%;
-  padding: .875rem 0;
+  padding: var(--m) 0;
 }
 
 button.button.primary {
+  padding-top: var(--m);
+  padding-bottom: var(--m);
   background-color: var(--primary);
 }
 
@@ -402,6 +404,11 @@ main.main-layout {
   align-items: flex-start;
   justify-content: flex-start;
   color: #141414;
+}
+main.main-layout.auth {
+  background-image: var(--gradient-action);
+  align-items: center;
+  justify-content: center;
 }
 .nav-wrapper {
   position: relative;
