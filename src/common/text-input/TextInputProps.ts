@@ -3,18 +3,15 @@ import { IconName } from "../icon/IconType";
 
 export type SimpleInputProps = {
   name: string;
-  type: InputHTMLAttributes<HTMLInputElement>["type"];
-  value: InputHTMLAttributes<HTMLInputElement>["value"];
-  autoComplete?: InputHTMLAttributes<HTMLInputElement>["autoComplete"];
   disabled?: boolean;
   isFocused?: boolean;
   error?: string;
   helperText?: string;
   label: string;
   onBlur?: () => void;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   children?: React.ReactElement;
-};
+} & InputHTMLAttributes<HTMLInputElement>;
 
 export type PasswordInputProps = Omit<SimpleInputProps, "type">;
 export type TextInputProps = Omit<SimpleInputProps, "children">;

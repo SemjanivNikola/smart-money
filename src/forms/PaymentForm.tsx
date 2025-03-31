@@ -2,6 +2,7 @@
 
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import DropdownArea from "../common/dropdown-area/DropdownArea";
+import FormActionBar from "../common/form/FormActionBar";
 import SimpleForm from "../common/form/SimpleForm";
 import SimpleInput from "../common/text-input/SimpleInput";
 import TextInputWithDetail from "../common/text-input/TextInputWithDetail";
@@ -14,10 +15,9 @@ interface TransactionType {
 interface PaymentFormProps {
   initialValues: TransactionType;
   onAPISubmit: (data: TransactionType, method: () => void) => void;
-  formActionButtons: React.ReactElement;
 }
 
-const PaymentForm = ({ initialValues, onAPISubmit, formActionButtons }: PaymentFormProps) => {
+const PaymentForm = ({ initialValues, onAPISubmit }: PaymentFormProps) => {
   const methods = useForm<TransactionType>({
     defaultValues: initialValues,
     mode: "onBlur",
@@ -64,7 +64,7 @@ const PaymentForm = ({ initialValues, onAPISubmit, formActionButtons }: PaymentF
             )}
           />
         </div>
-        {formActionButtons}
+        <FormActionBar title="Create" isLoading={methods.formState.isLoading} />
         <DropdownArea />
       </SimpleForm>
     </FormProvider>

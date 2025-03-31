@@ -132,6 +132,7 @@ body {
 .main {
   padding: 2rem 2.5rem;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 
@@ -296,6 +297,14 @@ tr:last-child {
   width: 100%;
 }
 
+.h-100 {
+  height: 100%;
+}
+
+.h-1 {
+  height: 100svh;
+}
+
 
 .f {
   display: flex;
@@ -327,6 +336,10 @@ tr:last-child {
 
 .a-c {
   align-items: center;
+}
+
+.ai-s {
+  align-items: stretch;
 }
 
 .j-c {
@@ -549,6 +562,14 @@ button.nav-btn {
 }
 .pb-1-5 {
   padding-bottom: 1.5rem;
+}
+
+.pb-1-5 {
+  padding-bottom: 1.5rem;
+}
+
+.pb-5 {
+  padding-bottom: var(--3xl);
 }
 
 /* ------------------------------ */
@@ -966,4 +987,21 @@ button.notification.badge {
 #dropdown-menu.hidden, #dropdown-notifications.hidden {
   -webkit-animation: slide-bottom 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
 	animation: slide-bottom 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
+}
+
+.wizard-slide {
+  position: relative;
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding: 0 var(--xs);
+  overflow: hidden;
+}
+
+.form-controller-fields {
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+.form-controller-fields > input:last-child {
+  scroll-margin-bottom: 5px; /* Ensures the last item is always scrolled into view */
 }

@@ -16,7 +16,7 @@ const INITIAL = {
   account: "",
 };
 
-const CreatePaymentForm = ({ onFinish }: { onFinish: () => void }) => {
+const CreatePaymentForm = () => {
   async function onhandleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -44,20 +44,11 @@ const CreatePaymentForm = ({ onFinish }: { onFinish: () => void }) => {
       });
 
   return (
-    <div className="mx-auto" style={{ maxWidth: "40%" }}>
-      <h3>Amount & Contact</h3>
-      <PaymentForm
-        initialValues={INITIAL}
-        onAPISubmit={onSubmit}
-        formActionButtons={
-          <FormActionBar
-            title="Create"
-            children={
-              <Button title="Continue" type="button" onClick={onFinish} isLoading={false} bStyle="primary" wide />
-            }
-          />
-        }
-      />
+    <div className="mx-auto h-100" style={{ maxWidth: "50%" }}>
+      <div className="h-100" style={{ position: "relative" }}>
+        <h3>Amount & Contact</h3>
+        <PaymentForm initialValues={INITIAL} onAPISubmit={onSubmit} />
+      </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 .double-content{
     flex-grow: 1;
     min-height: 0;
-    padding-top: var(--lg);
+    padding-top: var(--m);
 }
 
 .double-content > div:first-child {
