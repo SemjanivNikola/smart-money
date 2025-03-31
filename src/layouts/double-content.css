@@ -1,16 +1,10 @@
 .double-content{
-    flex-grow: 1;
     min-height: 0;
-    padding-top: var(--m);
-}
-
-.double-content > div:first-child {
-    flex-grow: 1;
+    align-items: stretch;
 }
 
 .screen-content-divider {
     width: 2px;
-    align-self: stretch;
     flex-shrink: 0;
     margin: 0 var(--xl);
     background-color: var(--extra-dim);
