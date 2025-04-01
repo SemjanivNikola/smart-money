@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <main className="main w-100 f col a-s gap-lg">
       <ScreenHeader title="Smart Money" />
-      <DoubleContentPage mainContent={<MainContent />} sideContent={<AccountWidget />} />
+      <DoubleContentPage.Divider mainContent={<MainContent />} sideContent={<AccountWidget />} sideContentBasis={20} />
     </main>
   );
 }
