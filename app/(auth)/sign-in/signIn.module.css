@@ -1,6 +1,11 @@
+#loginFormWrapper {
+    margin: 0 auto;
+    padding: var(--3xl) 0 var(--lg);
+    max-width: 67%;
+}
+
 .signInWrapper {
     width: 70%;
-    height: 70%;
     margin: var(--xl) auto;
     padding: var(--s);
     border-radius: var(--border-radius-s);
@@ -97,4 +102,9 @@
     padding: var(--m);
     background-color: var(--gray);
     font-weight: 400;
+}
+
+#linkBlok {
+    font-weight: 400;
+    text-align: center;
 }

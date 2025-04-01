@@ -12,11 +12,7 @@ const LoginInitData = {
 
 const MainContent = () => {
   return (
-    <div
-      id={s.loginFormWrapper}
-      className="f col a-s gap-lg"
-      style={{ margin: "0 auto", padding: "var(--3xl) 0", maxWidth: "67%" }}
-    >
+    <div id={s.loginFormWrapper} className="f col a-s gap-lg">
       <div className={s.formHeader}>
         <h2 className="mb-m">Welcome back!</h2>
         <p>Enter the e-mail address associated with your Smart Money account</p>
@@ -25,10 +21,17 @@ const MainContent = () => {
       <div className={s.orSpliter}>
         <span>or</span>
       </div>
-      <div className="w-100">
+      <div className="w-100 mb-m">
         <Link href="" className={s.iconLink}>
           <Image src={googleIcon} width={16} height={16} alt="Google icon" />
           <span>Continue with Google</span>
+        </Link>
+      </div>
+      <div className="spacer-md" />
+      <div id={s.linkBlok} className="w-100">
+        <p>Don't have an account?</p>
+        <Link href="/sign-up" style={{ color: "var(--primary)" }}>
+          Create account
         </Link>
       </div>
     </div>
