@@ -1,7 +1,7 @@
 import SearchBar from "@/src/common/search-bar/SearchBar";
 import ScreenHeader from "@/src/components/screen-header/ScreenHeader";
-import PaymentList from "./PaymentList";
-import CategoryList from "./CategoryList";
+import PaymentList from "../../../src/components/payment-table/PaymentList";
+import CategoryList from "../../../src/components/category-actions/CategoryList";
 
 export default function Payments() {
   return (

@@ -1,10 +1,8 @@
 "use client";
 
-import { FormEvent } from "react";
-import PaymentForm from "../../../../../src/forms/PaymentForm";
 import { storeTransaction } from "@/api/transactions/storeTransaction";
-import FormActionBar from "../../../../../src/common/form/FormActionBar";
-import Button from "../../../../../src/common/button/Button";
+import PaymentForm from "@/src/forms/PaymentForm";
+import { FormEvent } from "react";
 
 interface TransactionType {
   total: number;

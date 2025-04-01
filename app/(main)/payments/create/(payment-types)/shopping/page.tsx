@@ -2,8 +2,8 @@ import { fetchShoppingPaymentDraft } from "@/api/fetchShoppingPaymentDraft";
 import AdditionalInvoiceInfoForm from "@/src/forms/shopping-payment/AdditionalInvoiceInfoForm";
 import BasicInvoiceInfoForm from "@/src/forms/shopping-payment/BasicInvoiceInfoForm";
 import InvoiceItemsForm from "@/src/forms/shopping-payment/InvoiceItemsForm";
-import FormWizard from "../../FormWizard";
-import FormWizardItem from "../../FormWizardItem";
+import FormWizard from "../../../../../../src/components/form-wizard/FormWizard";
+import FormWizardItem from "../../../../../../src/components/form-wizard/FormWizardItem";
 
 const STEP_ONE = 0;
 const STEP_TWO = -101.5;

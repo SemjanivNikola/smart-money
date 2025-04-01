@@ -102,6 +102,9 @@
   * {
     color: var(--light);
   }
+  h1, h2, h3, h4, h5, h6, p, span, a {
+    color: inherit;
+  }
 }
 
 * {
@@ -164,10 +167,12 @@ button:focus-visible {
 /* =========== BUTTON =========== */
 button.button.wide {
   width: 100%;
-  padding: .875rem 0;
+  padding: var(--m) 0;
 }
 
 button.button.primary {
+  padding-top: var(--m);
+  padding-bottom: var(--m);
   background-color: var(--primary);
 }
 
@@ -402,6 +407,11 @@ main.main-layout {
   align-items: flex-start;
   justify-content: flex-start;
   color: #141414;
+}
+main.main-layout.auth {
+  background-color: var(--gray-dark);
+  align-items: center;
+  justify-content: center;
 }
 .nav-wrapper {
   position: relative;
