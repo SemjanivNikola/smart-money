@@ -4,7 +4,11 @@ import Button from "../common/button/Button";
 import SimpleInput from "../common/text-input/SimpleInput";
 import { useForm } from "../hooks/useForm";
 
-const SignInForm = ({ initData }: { initData: { email: string; password: string } }) => {
+interface SignInFormProps {
+  initData: { email: string; password: string };
+}
+
+const SignInForm = ({ initData }: SignInFormProps) => {
   const { register, onSubmit } = useForm(initData);
 
   function handleSubmit() {}
