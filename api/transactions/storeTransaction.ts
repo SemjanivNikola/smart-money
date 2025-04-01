@@ -1,7 +1,7 @@
 const URL = "http://127.0.0.1:8080";
 
 export async function storeTransaction(formData: any): Promise<any> {
-    const response = await fetch(`${URL}/transactions`, {
+    const response = await fetch(`${process.env.SMART_MONEY_BE_URL}/transactions`, {
       method: "POST",
       body: formData,
     })

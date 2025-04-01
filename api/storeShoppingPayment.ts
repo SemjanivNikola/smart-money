@@ -1,7 +1,5 @@
-const URL = "http://127.0.0.1:8080";
-
 export async function storeShoppingPayment(formData: any): Promise<any> {
-  const response = await fetch(`${URL}/payments`, {
+  const response = await fetch(`${process.env.SMART_MONEY_BE_URL}/payments`, {
     method: "POST",
     body: formData,
   })

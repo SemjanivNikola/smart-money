@@ -1,8 +1,6 @@
 import { CurrcencyEnum, PaymentTypeEnum } from "@/src/enums/PaymentEnum";
 import { AdditionalInvoiceData, BasicInvoiceData, ItemsInvoiceData } from "@/src/types/PaymentTypes";
 
-const URL = "http://127.0.0.1:8080";
-
 type ShoppingPaymentDraftType = {
   initBasicData: BasicInvoiceData;
   initAddonData: AdditionalInvoiceData;
@@ -11,7 +9,7 @@ type ShoppingPaymentDraftType = {
 };
 
 export async function fetchShoppingPaymentDraft(): Promise<ShoppingPaymentDraftType> {
-  // const response = await fetch(`${URL}/payments/draft`, {
+  // const response = await fetch(`${process.env.SMART_MONEY_BE_URL}/payments/draft`, {
   //   method: "GET",
   // })
   //   .then((res) => res.json())
