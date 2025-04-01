@@ -1,4 +1,4 @@
-import LoginForm from "@/src/forms/LoginForm";
+import SignInForm from "@/src/forms/SignInForm";
 import DoubleContentPage from "@/src/layouts/DoubleContentPage";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,7 +17,7 @@ const MainContent = () => {
         <h2 className="mb-m">Welcome back!</h2>
         <p>Enter the e-mail address associated with your Smart Money account</p>
       </div>
-      <LoginForm initData={LoginInitData} />
+      <SignInForm initData={LoginInitData} />
       <div className={s.orSpliter}>
         <span>or</span>
       </div>

@@ -4,7 +4,7 @@ import Button from "../common/button/Button";
 import SimpleInput from "../common/text-input/SimpleInput";
 import { useForm } from "../hooks/useForm";
 
-const LoginForm = ({ initData }: { initData: { email: string; password: string } }) => {
+const SignInForm = ({ initData }: { initData: { email: string; password: string } }) => {
   const { register, onSubmit } = useForm(initData);
 
   function handleSubmit() {}
@@ -19,4 +19,4 @@ const LoginForm = ({ initData }: { initData: { email: string; password: string }
   );
 };
 
-export default LoginForm;
+export default SignInForm;
