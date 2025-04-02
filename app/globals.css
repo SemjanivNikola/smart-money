@@ -132,13 +132,6 @@ body {
     background: var(--primary-glow);
 }
 
-.main {
-  padding: 2rem 2.5rem;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-
 a {
   color: inherit;
   text-decoration: none;
@@ -379,7 +372,13 @@ tr:last-child {
 .screen {
   width: 100%;
   height: 100svh;
-  padding: 0 var(--m) var(--m);
+  padding: var(--xl);
+  overflow: hidden;
+}
+
+.screen-content {
+  padding-top: var(--lg);
+  height: calc(100% - 52px - var(--m));
 }
 
 /* ------------------------------ */
@@ -537,6 +536,9 @@ button.nav-btn {
 .mb-m {
   margin-bottom: var(--m);
 }
+.mb-lg {
+  margin-bottom: var(--m);
+}
 /* ------------------------------ */
 .px-s {
   padding-left: var(--s);
@@ -554,6 +556,14 @@ button.nav-btn {
 .px-xl {
   padding-left: var(--xl);
   padding-right: var(--xl);
+}
+
+.pt-m {
+  padding-top: var(--m);
+}
+
+.pb-lg {
+  padding-bottom: var(--lg);
 }
 /* ------------------------------ */
 .py-2 {
