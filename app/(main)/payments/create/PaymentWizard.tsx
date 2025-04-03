@@ -7,7 +7,7 @@ const PaymentWizard = ({ activeStep = 1 }: { activeStep?: number }) => {
   const step4Class = activeStep === 4 ? "step active" : "step";
 
   return (
-    <div className="f gap-m" style={{ flexShrink: 0, flexGrow: 1, minWidth: "18%", maxWidth: "23%" }}>
+    <div className="f gap-m w-100">
       <div className="px-s" style={{ paddingBottom: "var(--lg)" }}>
         <span className="step-indicartor-line" />
       </div>

@@ -5,6 +5,7 @@
     padding-top: var(--m);
     padding-bottom: var(--lg);
     background-color: var(--dark-light);
+    color: var(--light);
 }
 
 .icon-bg {
@@ -16,5 +17,6 @@
 }
 
 .quick-action-link p {
+    font-size: var(--m);
     text-align: center;
 }
