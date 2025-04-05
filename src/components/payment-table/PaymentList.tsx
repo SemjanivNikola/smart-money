@@ -1,16 +1,18 @@
 import { fetchPaymentList } from "@/api/payments/fetchPaymentList";
 import Table from "@/src/common/table/Table";
 import TablePaymentActions from "../../common/table/TablePaymentActions";
+import EmptyTable from "@/src/common/table/EmptyTable";
 
-const PaymentList = async () => {
+export default async function PaymentList() {
   const { tableHeader, tableData } = await fetchPaymentList();
 
-  return (
-    <div className="py-m">
-      <TablePaymentActions />
-      <Table tableHeader={tableHeader} tableData={tableData} />
-    </div>
-  );
-};
+  if (tableData.length > 0)
+    return (
+      <div className="py-m">
+        <TablePaymentActions />
+        <Table tableHeader={tableHeader} tableData={tableData} />
+      </div>
+    );
 
-export default PaymentList;
+  return <EmptyTable />;
+};
