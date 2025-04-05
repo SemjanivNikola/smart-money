@@ -1,13 +1,18 @@
+"use server";
+
 import { PaymentTableRowProps } from "@/app/(main)/payments/PaymentRow";
 import { TableBodyItem } from "@/src/common/table/TableBody";
 import { TableHeaderItem } from "@/src/common/table/TableHeader";
 
-export async function fetchPaymentList(): Promise<{
+export async function fetchPaymentList(query?: string): Promise<{
   tableHeader: TableHeaderItem[];
   tableData: TableBodyItem<PaymentTableRowProps>[];
 }> {
   // const response = await fetch(`${process.env.SMART_MONEY_BE_URL}/payments/draft`, {
   //   method: "GET",
+  // next: {
+  //   tags: ["payment-list"];
+  // }
   // })
   //   .then((res) => res.json())
   //   .catch((error: Error) => {
