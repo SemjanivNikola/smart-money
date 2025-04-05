@@ -1,4 +1,5 @@
 .tab {
+    font-size: var(--font-m);
     padding: 12px var(--m);
     border-radius: var(--border-radius-m);
     color: var(--text-gray);
