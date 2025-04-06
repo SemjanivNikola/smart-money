@@ -4,7 +4,7 @@ import { PaymentTableRowProps } from "@/app/(main)/payments/PaymentRow";
 import { TableBodyItem } from "@/src/common/table/TableBody";
 import { TableHeaderItem } from "@/src/common/table/TableHeader";
 
-export async function fetchPaymentList(query?: string): Promise<{
+export async function fetchPayments(query?: string): Promise<{
   tableHeader: TableHeaderItem[];
   tableData: TableBodyItem<PaymentTableRowProps>[];
 }> {

@@ -1,4 +1,4 @@
-import { fetchPaymentList } from "@/api/payments/fetchPaymentList";
+import { fetchPayments } from "@/api/payments/fetchPayments";
 import PageScreen from "@/src/common/screen/PageScreen";
 import SearchBar from "@/src/common/search-bar/SearchBar";
 import { Suspense } from "react";
@@ -10,7 +10,7 @@ export default function Payments() {
   return (
     <PageScreen title="Payments">
       <>
-        <SearchBar fetchAPI={fetchPaymentList} />
+        <SearchBar fetchAPI={fetchPayments} />
         <CategoryList />
         <Suspense fallback={<LoadingState />}>
           <PaymentList />
