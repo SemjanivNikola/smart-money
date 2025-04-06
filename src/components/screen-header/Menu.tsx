@@ -43,7 +43,7 @@ const Menu = () => {
           style={{ borderBottom: "2px solid var(--extra-dim)", paddingBottom: "var(--m)", margin: "12px 0 var(--m)" }}
         >
           <div className="user-profile-img">
-            <img src="" alt="" />
+            <img src="./img-png" alt="" />
           </div>
           <div className="f col a-s gap-s">
             <h2>Nikola Semjaniv</h2>
