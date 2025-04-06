@@ -1,3 +1,5 @@
+"use server";
+
 import { PaymentTableRowProps } from "@/app/(main)/payments/PaymentRow";
 import { TableBodyItem } from "@/src/common/table/TableBody";
 import { TableHeaderItem } from "@/src/common/table/TableHeader";
