@@ -5,7 +5,7 @@ import s from "./searchbar.module.css";
 import Icon from "../icon/Icon";
 import { fetchPaymentList } from "@/api/payments/fetchPaymentList";
 
-const SearchBar = () => {
+const SearchBar = ({ fetchAPI }: { fetchAPI: (query: string) => void }) => {
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
 
@@ -18,17 +18,17 @@ const SearchBar = () => {
   }, [query]);
 
   useEffect(() => {
-    const fetchSearchResults = async () => {
+    const runSearchFetch = async () => {
       if (!debouncedQuery) return;
 
       try {
-        fetchPaymentList(debouncedQuery);
+        fetchAPI(debouncedQuery);
       } catch (error) {
         console.error("Failed to fetch search results:", error);
       }
     };
 
-    fetchSearchResults();
+    runSearchFetch();
   }, [debouncedQuery]);
 
   return (
