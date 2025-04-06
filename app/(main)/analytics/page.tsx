@@ -1,12 +1,9 @@
-import ScreenHeader from "@/src/components/screen-header/ScreenHeader";
+import PageScreen from "@/src/common/screen/PageScreen";
 
 export default function TransactionDetailsPage() {
   return (
-    <div className="screen">
-      <ScreenHeader title="Transaction details" />
-      <div className="f gap-m">
-        <div>Analytics</div>
-      </div>
-    </div>
+    <PageScreen title="Smart Money">
+      <h1>Analytics</h1>
+    </PageScreen>
   );
 }

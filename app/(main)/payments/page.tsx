@@ -1,17 +1,21 @@
+import { fetchPayments } from "@/api/payments/fetchPayments";
+import PageScreen from "@/src/common/screen/PageScreen";
 import SearchBar from "@/src/common/search-bar/SearchBar";
-import ScreenHeader from "@/src/components/screen-header/ScreenHeader";
-import PaymentList from "../../../src/components/payment-table/PaymentList";
+import { Suspense } from "react";
 import CategoryList from "../../../src/components/category-actions/CategoryList";
+import PaymentList from "../../../src/components/payment-table/PaymentList";
+import LoadingState from "./loading";
 
 export default function Payments() {
   return (
-    <div className="main w-100 f col a-s gap-lg">
-      <ScreenHeader title="Payments" />
-      <div className="py-lg as-s">
-        <SearchBar />
+    <PageScreen title="Payments">
+      <>
+        <SearchBar fetchAPI={fetchPayments} />
         <CategoryList />
-        <PaymentList />
-      </div>
-    </div>
+        <Suspense fallback={<LoadingState />}>
+          <PaymentList />
+        </Suspense>
+      </>
+    </PageScreen>
   );
 }
