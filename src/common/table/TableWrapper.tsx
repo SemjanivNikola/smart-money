@@ -29,7 +29,7 @@ const TableNestedWrapper = () => {
         <h2>Last Transactions (USD)</h2>
         <TableAction />
       </div>
-      <Table />
+      {/* <Table tableHeader={} /> */}
     </div>
   );
 };

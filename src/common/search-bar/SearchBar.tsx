@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import s from "./searchbar.module.css";
 import Icon from "../icon/Icon";
-import { fetchPaymentList } from "@/api/payments/fetchPaymentList";
 
 const SearchBar = ({ fetchAPI }: { fetchAPI: (query: string) => void }) => {
   const [query, setQuery] = useState("");
