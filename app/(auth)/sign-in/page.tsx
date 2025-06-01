@@ -5,10 +5,7 @@ import Link from "next/link";
 import googleIcon from "../../../assets/images/google.png";
 import s from "./signIn.module.css";
 
-const LoginInitData = {
-  email: "",
-  password: "",
-};
+export const dynamic = "error";
 
 const MainContent = () => {
   return (
@@ -17,19 +14,19 @@ const MainContent = () => {
         <h2 className="mb-m">Welcome back!</h2>
         <p>Enter the e-mail address associated with your Smart Money account</p>
       </div>
-      <SignInForm initData={LoginInitData} />
+      <SignInForm />
       <div className={s.orSpliter}>
         <span>or</span>
       </div>
       <div className="w-100 mb-m">
-        <Link href="" className={s.iconLink}>
+        <Link href="/" className={s.iconLink}>
           <Image src={googleIcon} width={16} height={16} alt="Google icon" />
           <span>Continue with Google</span>
         </Link>
       </div>
       <div className="spacer-md" />
       <div id={s.linkBlok} className="w-100">
-        <p>Don't have an account?</p>
+        <p>Don&apos;t have an account?</p>
         <Link href="/sign-up" style={{ color: "var(--primary)" }}>
           Create account
         </Link>

@@ -1,22 +1,26 @@
 "use client";
 
+import { signIn } from "next-auth/react";
+import { FormEvent } from "react";
 import Button from "../common/button/Button";
-import SimpleInput from "../common/text-input/SimpleInput";
-import { useForm } from "../hooks/useForm";
+import TextInput from "../common/text-input/TextInput";
 
-interface SignInFormProps {
-  initData: { email: string; password: string };
-}
+const SignInForm = () => {
+  async function onSubmit(e: FormEvent) {
+    e.preventDefault();
 
-const SignInForm = ({ initData }: SignInFormProps) => {
-  const { register, onSubmit } = useForm(initData);
-
-  function handleSubmit() {}
+    const formData = new FormData(e.currentTarget as HTMLFormElement);
+    await signIn("credentials", {
+      redirectTo: "/",
+      email: formData.get("email"),
+      password: formData.get("password"),
+    }).catch((error) => console.log("client login error >> ", error));
+  }
 
   return (
-    <form className="f col w-100" onSubmit={onSubmit(handleSubmit)}>
-      <SimpleInput label="" {...register("email")} type="email" placeholder="Email" isFocused />
-      <SimpleInput label="" {...register("password")} type="password" placeholder="Password" />
+    <form className="f col w-100" onSubmit={onSubmit}>
+      <TextInput name="email" type="email" placeholder="Email" isFocused />
+      <TextInput name="password" type="password" placeholder="Password" />
       <div className="spacer-md" />
       <Button title="Sign In" type="submit" bStyle="primary" isLoading={false} />
     </form>
