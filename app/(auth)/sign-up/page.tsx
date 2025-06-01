@@ -2,12 +2,7 @@ import SignUpForm from "@/src/forms/SignUpForm";
 import DoubleContentPage from "@/src/layouts/DoubleContentPage";
 import Link from "next/link";
 import s from "../sign-in/signIn.module.css";
-
-const SignUpInitData = {
-  email: "",
-  password: "",
-  passCheck: "",
-};
+import { createUser } from "@/api/auth/createUser";
 
 const MainContent = () => {
   return (
@@ -16,7 +11,7 @@ const MainContent = () => {
         <h2 className="mb-m">Sign up and...</h2>
         <p>Let your money to think smart</p>
       </div>
-      <SignUpForm initData={SignUpInitData} />
+      <SignUpForm submitMethod={createUser} />
       <div className="spacer-md" />
       <div id={s.linkBlok} className="w-100">
         <p>Already have an account?</p>

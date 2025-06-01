@@ -1,23 +1,26 @@
 "use client";
 
+import { FormEvent } from "react";
 import Button from "../common/button/Button";
-import SimpleInput from "../common/text-input/SimpleInput";
-import { useForm } from "../hooks/useForm";
+import TextInput from "../common/text-input/TextInput";
+import { useRouter } from "next/navigation";
 
-interface SignUpFormProps {
-  initData: { email: string; password: string; passCheck: string };
-}
+const SignUpForm = ({ submitMethod }: { submitMethod: (data: FormData) => Promise<{ data: Object; ok: boolean }> }) => {
+  const router = useRouter();
+  async function onSubmit(e: FormEvent) {
+    e.preventDefault();
 
-const SignUpForm = ({ initData }: SignUpFormProps) => {
-  const { register, onSubmit } = useForm(initData);
+    const formData = new FormData(e.currentTarget as HTMLFormElement);
+    const res = await submitMethod(formData);
 
-  function handleSubmit() {}
+    if (res.ok) router.push("/");
+  }
 
   return (
-    <form className="f col w-100" onSubmit={onSubmit(handleSubmit)}>
-      <SimpleInput label="" {...register("email")} type="email" placeholder="Email" isFocused />
-      <SimpleInput label="" {...register("password")} type="password" placeholder="Password" />
-      <SimpleInput label="" {...register("passCheck")} type="password" placeholder="Type password again" />
+    <form className="f col w-100" onSubmit={onSubmit}>
+      <TextInput name="email" type="email" placeholder="Email" isFocused />
+      <TextInput name="password" type="password" placeholder="Password" />
+      <TextInput name="passCheck" type="password" placeholder="Confirm your password" />
       <div className="spacer-md" />
       <Button title="Get started" type="submit" bStyle="primary" isLoading={false} />
     </form>
