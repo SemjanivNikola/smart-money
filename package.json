@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "motion": "12.5.0",
-    "next": "13.5.4",
+    "next": "15.3.2",
+    "next-auth": "5.0.0-beta.28",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "7.53.0",
