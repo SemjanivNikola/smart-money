@@ -43,7 +43,7 @@ const Menu = () => {
           style={{ borderBottom: "2px solid var(--extra-dim)", paddingBottom: "var(--m)", margin: "12px 0 var(--m)" }}
         >
           <div className="user-profile-img">
-            <img src="./img-png" alt="" />
+            <img src="assets/images/img-png" alt="" />
           </div>
           <div className="f col a-s gap-s">
             <h2>Nikola Semjaniv</h2>
@@ -100,7 +100,7 @@ const Menu = () => {
         <ul className="menu-section acc-section px-m">
           <li className="f gap-s">
             <div className="user-profile-img" style={{ width: 44, height: 44 }}>
-              <img src="./img.png" alt="" />
+              <img src="assets/images/img.png" alt="" />
             </div>
             <div className="f col a-s j-c">
               <div className="f a-c gap-xs">
@@ -112,7 +112,7 @@ const Menu = () => {
           </li>
           <li className="f gap-s">
             <div className="user-profile-img" style={{ width: 44, height: 44 }}>
-              <img src="./img.png" alt="" />
+              <img src="assets/images/img.png" alt="" />
             </div>
             <div className="f col a-s j-c">
               <div className="f a-c gap-xs">

@@ -27,7 +27,7 @@ const Wallet = () => {
       <div className="f a-c j-sb gap-m">
         <div className="f a-c gap-s">
           <div className="avatar sm">
-            <img src="./img.png" />
+            <img src="assets/images/img.png" />
           </div>
           <span>USD</span>
         </div>
