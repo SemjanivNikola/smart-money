@@ -8,8 +8,18 @@ const ACTIVE = "active";
 const HIDDEN = "hidden";
 let dropdownMenuEl: HTMLDivElement | null = null;
 
-const Menu = () => {
+interface MenuProps {
+  name: string;
+  username: string;
+}
+
+const Menu = ({}) => {
   const [cssClass, setCSSClass] = useState("");
+
+  // let user = localStorage.getItem("user");
+  // if (user != null) user = JSON.parse(user);
+
+  // console.log("user >> ", user);
 
   useEffect(() => {
     dropdownMenuEl = document.querySelector("#dropdown-menu") as HTMLDivElement;

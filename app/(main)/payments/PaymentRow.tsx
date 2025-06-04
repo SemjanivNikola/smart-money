@@ -4,17 +4,13 @@ import ButtonIcon from "@/src/common/button/ButtonIcon";
 import Icon from "@/src/common/icon/Icon";
 import Pill from "@/src/common/pill/Pill";
 import s from "@/src/common/table/Table.module.css";
+import { TransactionListSectionItem } from "@/src/enums/TransactionEnum";
 import { useRouter } from "next/navigation";
 import { MouseEvent } from "react";
 
-export interface PaymentTableRowProps {
-  id: string;
-  time: string;
-  toFrom: string;
-  amount: number;
-  status: string;
+type PaymentTableRowProps = TransactionListSectionItem & {
   //   action: () => void;
-}
+};
 
 const REDIRECT_URL = "/transactions/";
 
@@ -25,8 +21,11 @@ const ToFrom = ({ text }: { text: string }) => (
   </td>
 );
 
-const PaymentRow = ({ id, time, toFrom, amount, status }: PaymentTableRowProps) => {
+const PaymentRow = ({ id, executed_at, type, sender, recipient, amount, status }: PaymentTableRowProps) => {
   const router = useRouter();
+  const toFrom = type === "E" ? recipient : sender;
+  const executedAtTime = new Date(executed_at).toLocaleTimeString();
+
   function redirectOnClick(event: MouseEvent<HTMLTableRowElement>) {
     event.stopPropagation();
     router.push(REDIRECT_URL + id);
@@ -34,7 +33,7 @@ const PaymentRow = ({ id, time, toFrom, amount, status }: PaymentTableRowProps) 
 
   return (
     <tr className={s.tbRow} onClick={redirectOnClick}>
-      <td>{time}</td>
+      <td>{executedAtTime}</td>
       <ToFrom text={toFrom} />
       <td style={{ textAlign: "end" }}>{amount} USD</td>
       <td className="status">

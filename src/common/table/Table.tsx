@@ -1,11 +1,12 @@
-import PaymentRow, { PaymentTableRowProps } from "@/app/(main)/payments/PaymentRow";
+import PaymentRow from "@/app/(main)/payments/PaymentRow";
+import { TransactionListSectionItem } from "@/src/enums/TransactionEnum";
 import s from "./Table.module.css";
 import TableBody, { TableBodyItem } from "./TableBody";
 import TableHeader, { TableHeaderItem } from "./TableHeader";
 
 interface TableProps {
   tableHeader: TableHeaderItem[];
-  tableData: TableBodyItem<PaymentTableRowProps>[];
+  tableData: TableBodyItem<TransactionListSectionItem>[];
 }
 
 const Table = ({ tableHeader, tableData }: TableProps) => {
