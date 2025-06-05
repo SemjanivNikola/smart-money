@@ -1,14 +1,14 @@
-#account-widget {
+#wallet-widget {
     min-width: 415px;
 }
 
-#account-widget h2 {
+#wallet-widget h2 {
     position: relative;
     font-size: 24px;
     line-height: 26.4px;
 }
 
-#account-widget h2[data-multi="true"]::after {
+#wallet-widget h2[data-multi="true"]::after {
     content: attr(data-count);
     position: absolute;
     top: 2px;
@@ -19,7 +19,7 @@
     margin-left: var(--s);
 }
 
-#account-widget .icon-backdrop {
+#wallet-widget .icon-backdrop {
     width: 36px;
     height: 36px;
     display: flex;
@@ -28,14 +28,14 @@
     background-color: var(--primary);
 }
 
-#account-widget .balance {
+#wallet-widget .balance {
     font-size: var(--font-2xl);
     line-height: 59.4px;
     font-weight: 400;
     margin-bottom: var(--s);
 }
 
-#account-widget .desc {
+#wallet-widget .desc {
     color: var(--text-gray);
     font-size: var(--font-m);
     line-height: var(--line-height-m);

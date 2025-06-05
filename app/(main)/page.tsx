@@ -1,7 +1,7 @@
 import { fetchDashData } from "@/api/fetchDashData";
 import PageScreen from "@/src/common/screen/PageScreen";
 import Table from "@/src/common/table/Table";
-import AccountWidget from "@/src/components/page-components/accounts-widget/AccountsWidget";
+import WalletWidget from "@/src/components/page-components/wallet-widget/WalletWidget";
 import DoubleContentPage from "@/src/layouts/DoubleContentPage";
 import QuickActionBar from "../../src/components/quick-action-bar/QuickActionBar";
 
@@ -22,7 +22,7 @@ export default async function Home() {
     <PageScreen title="Smart Money">
       <DoubleContentPage.Divider
         mainContent={<MainContent />}
-        sideContent={<AccountWidget widgetProps={wallet} />}
+        sideContent={<WalletWidget widgetProps={wallet} />}
         sideContentBasis={20}
       />
     </PageScreen>

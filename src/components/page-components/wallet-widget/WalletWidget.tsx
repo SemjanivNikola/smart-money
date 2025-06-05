@@ -3,7 +3,7 @@
 import Icon from "@/src/common/icon/Icon";
 import Link from "next/link";
 import WalletCard from "../../wallet-card/WalletCard";
-import "./account-widget.css";
+import "./wallet-widget.css";
 import { WalletType } from "@/src/enums/TransactionEnum";
 
 interface WalletWidgetProps {
@@ -18,7 +18,7 @@ interface WalletWidgetProps {
 const WalletWidget = ({ widgetProps: { cards, totalAmount, count, currency } }: WalletWidgetProps) => {
   const symbol = getCurrencySymbol(currency);
   return (
-    <div id="account-widget">
+    <div id="wallet-widget">
       <div className="f a-c j-sb gap-s" style={{ marginBottom: "var(--m)" }}>
         <h2 data-multi="true" data-count={count}>
           Wallets
