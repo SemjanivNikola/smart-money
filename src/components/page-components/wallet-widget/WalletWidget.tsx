@@ -1,14 +1,15 @@
 "use client";
 
 import Icon from "@/src/common/icon/Icon";
+import { Card } from "@/src/types/WalletType";
+import getCurrencySymbol from "@/src/utils/getCurrencySymbol";
 import Link from "next/link";
-import WalletCard from "../../wallet-card/WalletCard";
+import CardList from "../../wallet-card/CardList";
 import "./wallet-widget.css";
-import { WalletType } from "@/src/enums/TransactionEnum";
 
 interface WalletWidgetProps {
   widgetProps: {
-    cards: WalletType[] | null;
+    cards: Card[] | null;
     totalAmount: number;
     currency: string;
     count: number;
@@ -17,11 +18,12 @@ interface WalletWidgetProps {
 
 const WalletWidget = ({ widgetProps: { cards, totalAmount, count, currency } }: WalletWidgetProps) => {
   const symbol = getCurrencySymbol(currency);
+  console.log(totalAmount);
   return (
     <div id="wallet-widget">
       <div className="f a-c j-sb gap-s" style={{ marginBottom: "var(--m)" }}>
         <h2 data-multi="true" data-count={count}>
-          Wallets
+          Cards
         </h2>
         <Link href="/" className="f a-c gap-m">
           Add new
@@ -35,22 +37,13 @@ const WalletWidget = ({ widgetProps: { cards, totalAmount, count, currency } }: 
           {symbol}
           {totalAmount}
         </span>
-        <span className="desc">Your balance ({currency})</span>
+        <span className="desc">Your total wallet balance ({currency})</span>
       </div>
-      <div className="" style={{ paddingTop: "var(--m)" }}>
-        <WalletCard.Wallet />
+      <div className="f col gap-lg" style={{ paddingTop: "var(--m)" }}>
+        <CardList list={cards} currencySymbol={symbol} />
       </div>
     </div>
   );
 };
-
-function getCurrencySymbol(currency: string) {
-  switch (currency) {
-    case "USD":
-      return "$";
-    default:
-      return "€";
-  }
-}
 
 export default WalletWidget;

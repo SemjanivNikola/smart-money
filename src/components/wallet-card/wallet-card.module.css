@@ -1,6 +1,6 @@
-.cardWrapper, .walletWrapper {
+.cardWrapper, .widgetCardWrapper {
     width: 100%;
-    max-width: 340px;
+    max-width: 360px;
     min-width: 278px;
     border: 1px solid var(--dim);
     padding: var(--s) var(--m);
@@ -8,7 +8,8 @@
     background: transparent;
 }
 
-.walletWrapper {
+.widgetCardWrapper {
+    max-width: unset !important;
     padding: var(--m);
 }
 

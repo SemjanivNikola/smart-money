@@ -1,5 +1,4 @@
-import { Fragment, ReactElement, cloneElement } from "react";
-import s from "./Table.module.css";
+import { Fragment } from "react";
 
 interface TableBodyProps<T> {
   list: TableBodyItem<T>[];

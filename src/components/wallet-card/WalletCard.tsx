@@ -1,6 +1,7 @@
 "use client";
 
 import ButtonIcon from "@/src/common/button/ButtonIcon";
+import { Card } from "@/src/types/WalletType";
 import s from "./wallet-card.module.css";
 
 const WalletCard = () => {
@@ -21,27 +22,40 @@ const WalletCard = () => {
   );
 };
 
-const Wallet = () => {
+type WalletProps = Card & {
+  currencySymbol: string;
+};
+
+const Wallet = ({ masked_number, balance, currency, limit, currencySymbol, is_active }: WalletProps) => {
+  const balanceSplit = balance.toString().split(".");
+  const active = is_active ? "Active" : null;
   return (
-    <div className={s.walletWrapper}>
+    <div className={s.widgetCardWrapper}>
       <div className="f a-c j-sb gap-m">
         <div className="f a-c gap-s">
           <div className="avatar sm">
             <img src="assets/images/img.png" />
           </div>
-          <span>USD</span>
+          <span>{currency}</span>
         </div>
         <ButtonIcon icon="plus" onClick={() => {}} />
       </div>
       <div className={s.spacer} />
       <span className={s.aBalance}>
-        $6.950<span className={s.aBalanceDim}>,00</span>
+        {currencySymbol}
+        {balanceSplit[0]}
+        <span className={s.aBalanceDim}>.{balanceSplit[1]}</span>
       </span>
       <div className="f a-c j-sb gap-m">
         <span className={s.cardSubText}>
-          Limit is <span className={s.subTextImportant}>$1000</span> a month.
+          Limit is{" "}
+          <span className={s.subTextImportant}>
+            {currencySymbol}
+            {limit}
+          </span>{" "}
+          a month.
         </span>
-        <span className={s.status}>Active</span>
+        <span className={s.status}>{active}</span>
       </div>
     </div>
   );
